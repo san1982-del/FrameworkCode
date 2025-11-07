@@ -1,0 +1,116 @@
+﻿<locators>
+	
+	<HomePage>
+		<newcar>
+			<LocatorType>XPATH</LocatorType>
+			<LocatorValue>//div[normalize-space()='NEW CARS']</LocatorValue>
+		</newcar>
+		<findnewcar>
+			<LocatorType>XPATH</LocatorType>
+			<LocatorValue>//div[normalize-space()='Find New Cars']</LocatorValue>
+		</findnewcar>
+		<usedcars>
+			<LocatorType>XPATH</LocatorType>
+			<LocatorValue>//div[normalize-space()='USED CARS']</LocatorValue>
+		</usedcars>
+		<exploreusedcars>
+			<LocatorType>XPATH</LocatorType>
+			<LocatorValue>//div[contains(text(),'Explore Used Cars')]</LocatorValue>
+		</exploreusedcars>
+		<search>
+			<LocatorType>XPATH</LocatorType>
+			<LocatorValue>//input[@placeholder='Search']</LocatorValue>
+		</search>
+		<dropdownsearch>
+			<LocatorType>XPATH</LocatorType>
+			<LocatorValue>//li[@data-label='All BMW Cars']</LocatorValue>
+		</dropdownsearch>
+		<dropdownmenu>
+			<LocatorType>XPATH</LocatorType>
+			<LocatorValue>//div/ul/li[1]/ul/div/li</LocatorValue>//div/div/div/ul/li[1]
+		</dropdownmenu>
+		<usedsearch>
+			<LocatorType>XPATH</LocatorType>
+			<LocatorValue>//div/div[1]/div/div/span[3]</LocatorValue>
+		</usedsearch>
+		<findyourrightcar>
+			<LocatorType>XPATH</LocatorType>
+			<LocatorValue>//input[contains(@class,'OMyJgF ayFmbh R67Xgy b36DQo CXPRav MdoJAO jCabaD Cxdcp3')]</LocatorValue>
+		</findyourrightcar>
+		<findyourrightcardropdownmenu>
+			<LocatorType>XPATH</LocatorType>
+			<LocatorValue>//div/div/ul/li[1]/ul/li</LocatorValue>
+		</findyourrightcardropdownmenu>
+		<locationicon>
+			<LocatorType>XPATH</LocatorType>
+			<LocatorValue>//div[@class='o-ex o-fJ o-bN o-cV o-f']//*[name()='svg']</LocatorValue>
+		</locationicon>
+		<citiselection>
+			<LocatorType>XPATH</LocatorType>
+			<LocatorValue>//img[@title='Mumbai']</LocatorValue>
+		</citiselection>
+		<citiselectionpopup>
+			<LocatorType>XPATH</LocatorType>
+			<LocatorValue>//*[@id="used-location-close-button"]/div[1]/span</LocatorValue>
+		</citiselectionpopup>
+	</HomePage>
+
+	<NewCarPage>
+		<bmwcar>
+			<LocatorType>LINK</LocatorType>
+			<LocatorValue>BMW</LocatorValue>
+		</bmwcar>
+		<toyotacar>
+			<LocatorType>LINK</LocatorType>
+			<LocatorValue>Toyota</LocatorValue>
+		</toyotacar>
+		<audicar>
+			<LocatorType>LINK</LocatorType>
+			<LocatorValue>Audi</LocatorValue>
+		</audicar>
+		<kiacar>
+			<LocatorType>LINK</LocatorType>
+			<LocatorValue>Kia</LocatorValue>
+		</kiacar>
+		<viewbrand>
+			<LocatorType>XPATH</LocatorType>
+			<LocatorValue>//div[@aria-label='[object Object]']</LocatorValue>
+		</viewbrand>
+	</NewCarPage>
+
+	<CarBase>
+		<cartitle>
+			<LocatorType>XPATH</LocatorType>
+			<LocatorValue>//*[@id="root"]//h1</LocatorValue>
+		</cartitle>
+		<carname>
+			<LocatorType>XPATH</LocatorType>
+			<LocatorValue>//div/div/div/div/a/h3</LocatorValue>
+		</carname>
+		<carprice>
+			<LocatorType>XPATH</LocatorType>
+			<LocatorValue>//span[contains(text(),'Rs.')]</LocatorValue>
+		</carprice>
+		<carpricecollection>
+			<LocatorType>XPATH</LocatorType>
+			<LocatorValue>//span[contains(text(),'Rs.')]</LocatorValue>
+		</carpricecollection>
+	</CarBase>
+	
+	<UsedCarPage>
+		<searchsecondhandcar>
+			<LocatorType>XPATH</LocatorType>
+			<LocatorValue>//div[@class='o-C  o-ov  o-ap']</LocatorValue>
+		</searchsecondhandcar>
+		<mumbiacityselection>
+			<LocatorType>XPATH</LocatorType>
+			<LocatorValue>//img[@title='Second Hand Cars in Mumbai']</LocatorValue>
+		</mumbiacityselection>
+		<locationicon>
+			<LocatorType>XPATH</LocatorType>
+			<LocatorValue>//div[@class='o-d ']//*[name()='svg']</LocatorValue>
+		</locationicon>
+	</UsedCarPage>
+	
+
+</locators>
