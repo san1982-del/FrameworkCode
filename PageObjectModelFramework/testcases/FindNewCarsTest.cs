@@ -14,7 +14,7 @@ namespace PageObjectModelFramework.testcases
     internal class FindNewCarsTest : BaseTest
     {
         [Parallelizable(ParallelScope.Children)]
-        [Test, TestCaseSource(nameof(GetTestData)), Category("regression"), Retry(1)]
+        [Test, TestCaseSource(nameof(GetTestData)), Category("smoke"), Retry(1)]
         public void TestFindNewCar(string browser, string runmode, string carbrand, string cartitle, string carname)
         {
             // Check if test should run
