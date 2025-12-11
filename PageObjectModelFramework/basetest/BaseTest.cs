@@ -21,164 +21,172 @@ using System.Threading.Tasks;
 
 namespace PageObjectModelFramework.basetest
 {
-    /* Extent reports, Logs, Keywords Screenshots, WebDriver, Configuration*/
-
     [SetUpFixture]
     internal class BaseTest
     {
-
-        public static ThreadLocal<IWebDriver> driver = new();  //Static variable and methods cannot be accessed by the objects of the class. This is different than java.
-                                                               //We can only access them through the class name. Only one copy of the static variables exists,
-                                                               //regardless of how many instances of the class are created.
-                                                               //java -jar selenium-server-4.36.0.jar standalone
+        public static ThreadLocal<IWebDriver> driver = new();
         private static ExtentReports extent;
         public static ThreadLocal<ExtentTest> exTest = new();
         public static readonly ILog log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
         IConfiguration configuration;
         static string fileName;
-        
 
+        public static IWebDriver GetDriver() => driver.Value;
 
-        public static IWebDriver GetDriver()
-        {
-            return driver.Value;
-        }
-
-        public static ExtentTest GetExtentTest()
-        {
-            return exTest.Value;
-        }
+        public static ExtentTest GetExtentTest() => exTest.Value;
 
         [SetUp]
         public void BeforeEachTest()
         {
             log.Info("Test Execution is Started");
-            exTest.Value = extent.CreateTest(TestContext.CurrentContext.Test.ClassName + " @ Test Case Name : " + TestContext.CurrentContext.Test.Name);
-
+            exTest.Value = extent.CreateTest(
+                TestContext.CurrentContext.Test.ClassName +
+                " @ Test Case Name : " +
+                TestContext.CurrentContext.Test.Name);
         }
 
         [TearDown]
         public void AfterEachTest()
         {
             log.Info("Test Execution is Completed");
-            //Get the test status
             var testStatus = TestContext.CurrentContext.Result.Outcome.Status;
-
 
             if (testStatus == TestStatus.Passed)
             {
                 GetExtentTest().Pass("Test case passed");
-                IMarkup markup = MarkupHelper.CreateLabel("PASS", ExtentColor.Green);
-                GetExtentTest().Pass(markup);
-
+                GetExtentTest().Pass(MarkupHelper.CreateLabel("PASS", ExtentColor.Green));
             }
             else if (testStatus == TestStatus.Skipped)
             {
                 GetExtentTest().Skip("Test Skipped : " + TestContext.CurrentContext.Result.Message);
-                IMarkup markup = MarkupHelper.CreateLabel("SKIP", ExtentColor.Amber);
-                GetExtentTest().Skip(markup);
+                GetExtentTest().Skip(MarkupHelper.CreateLabel("SKIP", ExtentColor.Amber));
             }
             else if (testStatus == TestStatus.Failed)
             {
-
-
                 CaptureScreenshot();
-
                 GetExtentTest().Fail("Test Failed : " + TestContext.CurrentContext.Result.Message);
-                GetExtentTest().Fail("<b><font color=red>  Screenshot of failure </font></b><br>", MediaEntityBuilder.CreateScreenCaptureFromPath(Directory.GetParent(Environment.CurrentDirectory).Parent.Parent + "\\screenshots\\" + fileName).Build());
-                IMarkup markup = MarkupHelper.CreateLabel("FAIL", ExtentColor.Red);
-                GetExtentTest().Fail(markup);
+                GetExtentTest().Fail(
+                    "<b><font color=red>Screenshot of failure</font></b><br>",
+                    MediaEntityBuilder.CreateScreenCaptureFromPath(
+                        Directory.GetParent(Environment.CurrentDirectory).Parent.Parent.FullName +
+                        "\\screenshots\\" +
+                        fileName
+                    ).Build()
+                );
+                GetExtentTest().Fail(MarkupHelper.CreateLabel("FAIL", ExtentColor.Red));
             }
 
             if (driver.Value != null)
             {
-
                 GetDriver().Quit();
             }
-
-
         }
 
         private void CaptureScreenshot()
         {
+            try
+            {
+                DateTime currentTime = DateTime.Now;
+                fileName = currentTime.ToString("yyyy-MM-dd_HH-mm-ss") + ".jpg";
 
-            DateTime currentTime = DateTime.Now;
-            fileName = currentTime.ToString("yyyy-MM-dd_HH-mm-ss") + ".jpg";
-
-            Screenshot screenshot = GetDriver().TakeScreenshot();
-            screenshot.SaveAsFile(Directory.GetParent(Environment.CurrentDirectory).Parent.Parent + "\\screenshots\\" + fileName);
-
-            
+                var screenshot = GetDriver()?.TakeScreenshot();
+                if (screenshot != null)
+                {
+                    screenshot.SaveAsFile(
+                        Directory.GetParent(Environment.CurrentDirectory).Parent.Parent.FullName +
+                        "\\screenshots\\" +
+                        fileName
+                    );
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Screenshot capture failed: " + ex.Message);
+            }
         }
 
         private dynamic GetBrowserOptions(string browserName)
         {
-
-            switch (browserName)
+            switch (browserName.ToLower())
             {
-
                 case "chrome":
-                    return new ChromeOptions();// Summary:  Class to manage options specific to OpenQA.Selenium.Chrome.ChromeDriver
-                                              
+                    var chrome = new ChromeOptions();
+                    chrome.AddArgument("--headless=new");
+                    chrome.AddArgument("--no-sandbox");
+                    chrome.AddArgument("--disable-dev-shm-usage");
+                    chrome.AddArgument("--disable-gpu");
+                    chrome.AddArgument("--window-size=1920,1080");
+                    return chrome;
+
                 case "firefox":
-                    return new FirefoxOptions();
+                    var ff = new FirefoxOptions();
+                    ff.AddArgument("--headless");
+                    ff.AddArgument("--width=1920");
+                    ff.AddArgument("--height=1080");
+                    return ff;
+
+                default:
+                    return new ChromeOptions();
             }
-
-            return new ChromeOptions();
         }
-
 
         public void SetUp(string browserName)
         {
             var commandTimeout = TimeSpan.FromMinutes(3);
             dynamic options = GetBrowserOptions(browserName);
-            options.PlatformName = "windows";
-            driver.Value = new RemoteWebDriver(new Uri(configuration["AppSettings:gridurl"]), options.ToCapabilities(), commandTimeout);
-            
+
+            // IMPORTANT: Do NOT set platformName ("windows" would break Grid)
+            // Grid automatically detects Linux container platform.
+
+            driver.Value = new RemoteWebDriver(
+                new Uri(configuration["AppSettings:gridurl"]),
+                options.ToCapabilities(),
+                commandTimeout
+            );
+
             GetDriver().Navigate().GoToUrl(configuration["AppSettings:testsiteurl"]);
             GetDriver().Manage().Cookies.DeleteAllCookies();
             GetDriver().Manage().Window.Maximize();
-            GetDriver().Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(int.Parse(configuration["AppSettings:implicit.wait"]));
+            GetDriver().Manage().Timeouts().ImplicitWait =
+                TimeSpan.FromSeconds(int.Parse(configuration["AppSettings:implicit.wait"]));
         }
 
         static BaseTest()
         {
             DateTime currentTime = DateTime.Now;
-            string fileName = "Extent_" + currentTime.ToString("yyyy-MM-dd_HH-mm-ss") + ".html";
-            extent = CreateInstance(fileName);
+            string reportName = "Extent_" + currentTime.ToString("yyyy-MM-dd_HH-mm-ss") + ".html";
+            extent = CreateInstance(reportName);
         }
 
         [OneTimeSetUp]
         public void OneTimeSetup()
         {
             Loging();
-            
             configuration = new ConfigurationBuilder()
                 .SetBasePath(Directory.GetParent(Environment.CurrentDirectory).Parent.Parent.FullName + "\\resources\\")
                 .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
                 .Build();
-
         }
 
         private void Loging()
         {
             var logRepository = LogManager.GetRepository(System.Reflection.Assembly.GetEntryAssembly());
-            XmlConfigurator.Configure(logRepository, new FileInfo(Directory.GetParent(Environment.CurrentDirectory).Parent.Parent.FullName + "\\resources\\log4net.config"));
+            XmlConfigurator.Configure(logRepository, new FileInfo(
+                Directory.GetParent(Environment.CurrentDirectory).Parent.Parent.FullName +
+                "\\resources\\log4net.config"
+            ));
         }
 
         [OneTimeTearDown]
         public void OneTimeTearDown()
         {
-            
             extent.Flush();
-            if (driver == null)
+            if (driver != null)
             {
                 driver.Dispose();
                 exTest.Dispose();
                 log.Info("Test Execution Completed");
             }
-            
-
         }
 
         public void runmodecheck(string runmode)
@@ -191,7 +199,12 @@ namespace PageObjectModelFramework.basetest
 
         public static ExtentReports CreateInstance(string fileName)
         {
-            var htmlReporter = new ExtentSparkReporter(Directory.GetParent(Environment.CurrentDirectory).Parent.Parent.FullName + "\\reports\\" + fileName);
+            var htmlReporter = new ExtentSparkReporter(
+                Directory.GetParent(Environment.CurrentDirectory).Parent.Parent.FullName +
+                "\\reports\\" +
+                fileName
+            );
+
             htmlReporter.Config.Theme = Theme.Standard;
             htmlReporter.Config.DocumentTitle = "AUTOMATION Test Suite";
             htmlReporter.Config.ReportName = "Automation Test Results";
@@ -202,11 +215,9 @@ namespace PageObjectModelFramework.basetest
 
             extent.AddSystemInfo("Automation Tester", "XXXX");
             extent.AddSystemInfo("Organization", "YYYY");
-            extent.AddSystemInfo("Build No: ", "ZZZZ");
+            extent.AddSystemInfo("Build No:", "ZZZZ");
 
             return extent;
         }
-
     }
-
 }
