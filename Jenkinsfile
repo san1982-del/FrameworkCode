@@ -23,9 +23,9 @@ pipeline {
         DOTNET_CLI_HOME = "${WORKSPACE}"
         SOLUTION_PATH = 'PageObjectModelFramework.sln'
         PROJECT_PATH = 'PageObjectModelFramework/PageObjectModelFramework.csproj'
-        REPORT_PATH = 'PageObjectModelFramework/PageObjectModelFramework/reports'
-        SCREENSHOT_PATH = 'PageObjectModelFramework/PageObjectModelFramework/screenshots'
-        LOG_PATH = 'PageObjectModelFramework/PageObjectModelFramework/logs'
+        REPORT_PATH = 'PageObjectModelFramework/reports'
+        SCREENSHOT_PATH = 'PageObjectModelFramework/screenshots'
+        LOG_PATH = 'PageObjectModelFramework/logs'
     }
     
     stages {
