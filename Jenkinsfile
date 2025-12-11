@@ -103,7 +103,7 @@ pipeline {
                         ping 127.0.0.1 -n 21 > nul
                         
                         echo Checking Grid status...
-                        curl -s http://localhost:4444/wd/hub/status
+                        curl -s http://localhost:4444/status
                         
                         echo ✓ Selenium Grid is ready!
                     '''
