@@ -130,9 +130,10 @@ namespace PageObjectModelFramework.basetest
 
         public void SetUp(string browserName)
         {
+            var commandTimeout = TimeSpan.FromMinutes(3);
             dynamic options = GetBrowserOptions(browserName);
             options.PlatformName = "windows";
-            driver.Value = new RemoteWebDriver(new Uri(configuration["AppSettings:gridurl"]), options.ToCapabilities());
+            driver.Value = new RemoteWebDriver(new Uri(configuration["AppSettings:gridurl"]), options.ToCapabilities(), commandTimeout);
             
             GetDriver().Navigate().GoToUrl(configuration["AppSettings:testsiteurl"]);
             GetDriver().Manage().Cookies.DeleteAllCookies();
