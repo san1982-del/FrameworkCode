@@ -28,16 +28,22 @@ namespace PageObjectModelFramework.pageobjects
             
         }
 
-       
-
-        public void GetCarNameAndPrice()
+        public string GetCarNameAndPrice()
         {
-
+            StringBuilder PriceNameData = new StringBuilder();
+            //string PriceNameData = "";
             for (int i = 0; i < BasePage.keyword.GetWebElements("CarBase", "carprice", "XPATH").Count; i++)
             {
-                TestContext.Progress.WriteLine(BasePage.keyword.GetWebElements("CarBase", "carname", "XPATH")[i].Text + "----Car price is : " + BasePage.keyword.GetWebElements("CarBase", "carprice", "XPATH")[i].Text);
+                //string ActualPriceNameData = BasePage.keyword.GetWebElements("CarBase", "carname", "XPATH")[i].Text + "----Car price is : " + BasePage.keyword.GetWebElements("CarBase", "carprice", "XPATH")[i].Text;
+                PriceNameData.Append(BasePage.keyword.GetWebElements("CarBase", "carname", "XPATH")[i].Text)
+                .Append("----Car price is : ")
+                .Append(BasePage.keyword.GetWebElements("CarBase", "carprice", "XPATH")[i].Text)
+                .Append("<br>");
+               // PriceNameData += ActualPriceNameData + "\t" + ;
+               
+                
             }
-
+            return PriceNameData.ToString();
         }
 
         public void GlobalSearch(string carname, string carbrand,string cartitle, string searchtype)

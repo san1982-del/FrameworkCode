@@ -7,11 +7,11 @@
 		</newcar>
 		<findnewcar>
 			<LocatorType>XPATH</LocatorType>
-			<LocatorValue>//div[normalize-space()='Find New Cars']</LocatorValue>
+			<LocatorValue>//div[text()='NEW CARS']</LocatorValue>
 		</findnewcar>
 		<usedcars>
 			<LocatorType>XPATH</LocatorType>
-			<LocatorValue>//div[normalize-space()='USED CARS']</LocatorValue>
+			<LocatorValue>//div[text()='USED CARS']</LocatorValue>
 		</usedcars>
 		<exploreusedcars>
 			<LocatorType>XPATH</LocatorType>
@@ -100,8 +100,12 @@
 	<UsedCarPage>
 		<searchsecondhandcar>
 			<LocatorType>XPATH</LocatorType>
-			<LocatorValue>//div[@class='o-C  o-ov  o-ap']</LocatorValue>
+			<LocatorValue>//input[@placeholder='Type model name, e.g, Used Alto']</LocatorValue>
 		</searchsecondhandcar>
+		<searchbutton>
+			<LocatorType>XPATH</LocatorType>
+			<LocatorValue>//div[@class='o-D o-ox o-jJ o-j4 o-O o-om o-T']//*[name()='svg']</LocatorValue>
+		</searchbutton>
 		<mumbiacityselection>
 			<LocatorType>XPATH</LocatorType>
 			<LocatorValue>//img[@title='Second Hand Cars in Mumbai']</LocatorValue>
@@ -131,8 +135,20 @@
 		</webtablecolumn>
 		<webtable>
 			<LocatorType>XPATH</LocatorType>
-			<LocatorValue>//section/div/div[2]/table</LocatorValue>
+			<LocatorValue>//section/div/div[2]/table</LocatorValue>//section/div/div/table
 		</webtable>
+		<webtablewithoutexpand>
+			<LocatorType>XPATH</LocatorType>
+			<LocatorValue>//section/div/div/table</LocatorValue>
+		</webtablewithoutexpand>
+		<webtablerowwithoutexpand>
+			<LocatorType>XPATH</LocatorType>
+			<LocatorValue>//section/div/div/table/tbody/tr</LocatorValue>
+		</webtablerowwithoutexpand>
+		<webtablecolumnwithoutexpand>
+			<LocatorType>XPATH</LocatorType>
+			<LocatorValue>//section/div/div/table/tbody/tr[1]/td</LocatorValue>
+		</webtablecolumnwithoutexpand>
 	
 </CarPage>
 	

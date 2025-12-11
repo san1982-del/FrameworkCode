@@ -132,28 +132,26 @@ namespace PageObjectModelFramework.basetest
         {
             dynamic options = GetBrowserOptions(browserName);
             options.PlatformName = "windows";
-            //options.AddUserProfilePreference("profile.default_content_setting_values.notifications", 2);
-
             driver.Value = new RemoteWebDriver(new Uri(configuration["AppSettings:gridurl"]), options.ToCapabilities());
-           
+            
             GetDriver().Navigate().GoToUrl(configuration["AppSettings:testsiteurl"]);
-            BaseTest.log.Info(browserName+" browser with following url "+ configuration["AppSettings:testsiteurl"]+ " is launched");
             GetDriver().Manage().Cookies.DeleteAllCookies();
             GetDriver().Manage().Window.Maximize();
             GetDriver().Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(int.Parse(configuration["AppSettings:implicit.wait"]));
+        }
+
+        static BaseTest()
+        {
+            DateTime currentTime = DateTime.Now;
+            string fileName = "Extent_" + currentTime.ToString("yyyy-MM-dd_HH-mm-ss") + ".html";
+            extent = CreateInstance(fileName);
         }
 
         [OneTimeSetUp]
         public void OneTimeSetup()
         {
             Loging();
-            //log.Info("");
             
-
-            DateTime currentTime = DateTime.Now;
-            string fileName = "Extent_" + currentTime.ToString("yyyy-MM-dd_HH-mm-ss") + ".html";
-            extent = CreateInstance(fileName);
-
             configuration = new ConfigurationBuilder()
                 .SetBasePath(Directory.GetParent(Environment.CurrentDirectory).Parent.Parent.FullName + "\\resources\\")
                 .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
@@ -180,6 +178,14 @@ namespace PageObjectModelFramework.basetest
             }
             
 
+        }
+
+        public void runmodecheck(string runmode)
+        {
+            if (runmode.Equals("N"))
+            {
+                Assert.Ignore("Ignoring the test as the run mode is NO");
+            }
         }
 
         public static ExtentReports CreateInstance(string fileName)

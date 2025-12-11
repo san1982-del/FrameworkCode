@@ -1,48 +1,7 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\FrameworkCSharp\\PageObjectModelFramework\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{108B846B-32E4-475D-847E-B1E9E996CB93}|PageObjectModelFramework\\PageObjectModelFramework.csproj|d:\\frameworkcsharp\\pageobjectmodelframework\\pageobjectmodelframework\\resources\\locators.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
-      "RelativeMoniker": "D:0:0:{108B846B-32E4-475D-847E-B1E9E996CB93}|PageObjectModelFramework\\PageObjectModelFramework.csproj|solutionrelative:pageobjectmodelframework\\resources\\locators.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{108B846B-32E4-475D-847E-B1E9E996CB93}|PageObjectModelFramework\\PageObjectModelFramework.csproj|d:\\frameworkcsharp\\pageobjectmodelframework\\pageobjectmodelframework\\pageobjects\\carnamepage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{108B846B-32E4-475D-847E-B1E9E996CB93}|PageObjectModelFramework\\PageObjectModelFramework.csproj|solutionrelative:pageobjectmodelframework\\pageobjects\\carnamepage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{108B846B-32E4-475D-847E-B1E9E996CB93}|PageObjectModelFramework\\PageObjectModelFramework.csproj|d:\\frameworkcsharp\\pageobjectmodelframework\\pageobjectmodelframework\\testcases\\findnewcarstest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{108B846B-32E4-475D-847E-B1E9E996CB93}|PageObjectModelFramework\\PageObjectModelFramework.csproj|solutionrelative:pageobjectmodelframework\\testcases\\findnewcarstest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{108B846B-32E4-475D-847E-B1E9E996CB93}|PageObjectModelFramework\\PageObjectModelFramework.csproj|d:\\frameworkcsharp\\pageobjectmodelframework\\pageobjectmodelframework\\testcases\\searchcartest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{108B846B-32E4-475D-847E-B1E9E996CB93}|PageObjectModelFramework\\PageObjectModelFramework.csproj|solutionrelative:pageobjectmodelframework\\testcases\\searchcartest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{108B846B-32E4-475D-847E-B1E9E996CB93}|PageObjectModelFramework\\PageObjectModelFramework.csproj|d:\\frameworkcsharp\\pageobjectmodelframework\\pageobjectmodelframework\\utilities\\keyworddriven.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{108B846B-32E4-475D-847E-B1E9E996CB93}|PageObjectModelFramework\\PageObjectModelFramework.csproj|solutionrelative:pageobjectmodelframework\\utilities\\keyworddriven.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{108B846B-32E4-475D-847E-B1E9E996CB93}|PageObjectModelFramework\\PageObjectModelFramework.csproj|d:\\frameworkcsharp\\pageobjectmodelframework\\pageobjectmodelframework\\pageobjects\\carbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{108B846B-32E4-475D-847E-B1E9E996CB93}|PageObjectModelFramework\\PageObjectModelFramework.csproj|solutionrelative:pageobjectmodelframework\\pageobjects\\carbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{108B846B-32E4-475D-847E-B1E9E996CB93}|PageObjectModelFramework\\PageObjectModelFramework.csproj|d:\\frameworkcsharp\\pageobjectmodelframework\\pageobjectmodelframework\\pageobjects\\basepage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{108B846B-32E4-475D-847E-B1E9E996CB93}|PageObjectModelFramework\\PageObjectModelFramework.csproj|solutionrelative:pageobjectmodelframework\\pageobjects\\basepage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{108B846B-32E4-475D-847E-B1E9E996CB93}|PageObjectModelFramework\\PageObjectModelFramework.csproj|d:\\frameworkcsharp\\pageobjectmodelframework\\pageobjectmodelframework\\testcases\\carpriceandname.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{108B846B-32E4-475D-847E-B1E9E996CB93}|PageObjectModelFramework\\PageObjectModelFramework.csproj|solutionrelative:pageobjectmodelframework\\testcases\\carpriceandname.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{108B846B-32E4-475D-847E-B1E9E996CB93}|PageObjectModelFramework\\PageObjectModelFramework.csproj|d:\\frameworkcsharp\\pageobjectmodelframework\\pageobjectmodelframework\\pageobjects\\carbrandpage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{108B846B-32E4-475D-847E-B1E9E996CB93}|PageObjectModelFramework\\PageObjectModelFramework.csproj|solutionrelative:pageobjectmodelframework\\pageobjects\\carbrandpage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{108B846B-32E4-475D-847E-B1E9E996CB93}|PageObjectModelFramework\\PageObjectModelFramework.csproj|d:\\frameworkcsharp\\pageobjectmodelframework\\pageobjectmodelframework\\basetest\\basetest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{108B846B-32E4-475D-847E-B1E9E996CB93}|PageObjectModelFramework\\PageObjectModelFramework.csproj|solutionrelative:pageobjectmodelframework\\basetest\\basetest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "WorkspaceRootPath": "D:\\FrameworkCSharpEnhanced\\PageObjectModelFramework\\",
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -50,7 +9,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": -1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -59,127 +18,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "KeywordDriven.cs",
-              "DocumentMoniker": "D:\\FrameworkCSharp\\PageObjectModelFramework\\PageObjectModelFramework\\utilities\\KeywordDriven.cs",
-              "RelativeDocumentMoniker": "PageObjectModelFramework\\utilities\\KeywordDriven.cs",
-              "ToolTip": "D:\\FrameworkCSharp\\PageObjectModelFramework\\PageObjectModelFramework\\utilities\\KeywordDriven.cs",
-              "RelativeToolTip": "PageObjectModelFramework\\utilities\\KeywordDriven.cs",
-              "ViewState": "AgIAAEkAAAAAAAAAAAAkwPEAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-13T04:34:50.702Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "SearchCarTest.cs",
-              "DocumentMoniker": "D:\\FrameworkCSharp\\PageObjectModelFramework\\PageObjectModelFramework\\testcases\\SearchCarTest.cs",
-              "RelativeDocumentMoniker": "PageObjectModelFramework\\testcases\\SearchCarTest.cs",
-              "ToolTip": "D:\\FrameworkCSharp\\PageObjectModelFramework\\PageObjectModelFramework\\testcases\\SearchCarTest.cs",
-              "RelativeToolTip": "PageObjectModelFramework\\testcases\\SearchCarTest.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-12T20:34:57.175Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "CarNamePage.cs",
-              "DocumentMoniker": "D:\\FrameworkCSharp\\PageObjectModelFramework\\PageObjectModelFramework\\pageobjects\\CarNamePage.cs",
-              "RelativeDocumentMoniker": "PageObjectModelFramework\\pageobjects\\CarNamePage.cs",
-              "ToolTip": "D:\\FrameworkCSharp\\PageObjectModelFramework\\PageObjectModelFramework\\pageobjects\\CarNamePage.cs",
-              "RelativeToolTip": "PageObjectModelFramework\\pageobjects\\CarNamePage.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAgwDMAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-12T20:14:38.807Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "locators.xml",
-              "DocumentMoniker": "D:\\FrameworkCSharp\\PageObjectModelFramework\\PageObjectModelFramework\\resources\\locators.xml",
-              "RelativeDocumentMoniker": "PageObjectModelFramework\\resources\\locators.xml",
-              "ToolTip": "D:\\FrameworkCSharp\\PageObjectModelFramework\\PageObjectModelFramework\\resources\\locators.xml",
-              "RelativeToolTip": "PageObjectModelFramework\\resources\\locators.xml",
-              "ViewState": "AgIAAFkAAAAAAAAAAAAowIMAAAALAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003576|",
-              "WhenOpened": "2025-11-12T19:43:59.561Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "CarBase.cs",
-              "DocumentMoniker": "D:\\FrameworkCSharp\\PageObjectModelFramework\\PageObjectModelFramework\\pageobjects\\CarBase.cs",
-              "RelativeDocumentMoniker": "PageObjectModelFramework\\pageobjects\\CarBase.cs",
-              "ToolTip": "D:\\FrameworkCSharp\\PageObjectModelFramework\\PageObjectModelFramework\\pageobjects\\CarBase.cs",
-              "RelativeToolTip": "PageObjectModelFramework\\pageobjects\\CarBase.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAABsAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-12T19:32:32.047Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "BasePage.cs",
-              "DocumentMoniker": "D:\\FrameworkCSharp\\PageObjectModelFramework\\PageObjectModelFramework\\pageobjects\\BasePage.cs",
-              "RelativeDocumentMoniker": "PageObjectModelFramework\\pageobjects\\BasePage.cs",
-              "ToolTip": "D:\\FrameworkCSharp\\PageObjectModelFramework\\PageObjectModelFramework\\pageobjects\\BasePage.cs",
-              "RelativeToolTip": "PageObjectModelFramework\\pageobjects\\BasePage.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-12T18:36:10.828Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "FindNewCarsTest.cs",
-              "DocumentMoniker": "D:\\FrameworkCSharp\\PageObjectModelFramework\\PageObjectModelFramework\\testcases\\FindNewCarsTest.cs",
-              "RelativeDocumentMoniker": "PageObjectModelFramework\\testcases\\FindNewCarsTest.cs",
-              "ToolTip": "D:\\FrameworkCSharp\\PageObjectModelFramework\\PageObjectModelFramework\\testcases\\FindNewCarsTest.cs",
-              "RelativeToolTip": "PageObjectModelFramework\\testcases\\FindNewCarsTest.cs",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAAACUAAAA3AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-12T17:06:39.134Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "CarPriceandName.cs",
-              "DocumentMoniker": "D:\\FrameworkCSharp\\PageObjectModelFramework\\PageObjectModelFramework\\testcases\\CarPriceandName.cs",
-              "RelativeDocumentMoniker": "PageObjectModelFramework\\testcases\\CarPriceandName.cs",
-              "ToolTip": "D:\\FrameworkCSharp\\PageObjectModelFramework\\PageObjectModelFramework\\testcases\\CarPriceandName.cs",
-              "RelativeToolTip": "PageObjectModelFramework\\testcases\\CarPriceandName.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAAB0AAABJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-12T20:15:31.834Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "BaseTest.cs",
-              "DocumentMoniker": "D:\\FrameworkCSharp\\PageObjectModelFramework\\PageObjectModelFramework\\basetest\\BaseTest.cs",
-              "RelativeDocumentMoniker": "PageObjectModelFramework\\basetest\\BaseTest.cs",
-              "ToolTip": "D:\\FrameworkCSharp\\PageObjectModelFramework\\PageObjectModelFramework\\basetest\\BaseTest.cs",
-              "RelativeToolTip": "PageObjectModelFramework\\basetest\\BaseTest.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAADgvxoAAAAbAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-12T19:13:35.652Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "CarBrandPage.cs",
-              "DocumentMoniker": "D:\\FrameworkCSharp\\PageObjectModelFramework\\PageObjectModelFramework\\pageobjects\\CarBrandPage.cs",
-              "RelativeDocumentMoniker": "PageObjectModelFramework\\pageobjects\\CarBrandPage.cs",
-              "ToolTip": "D:\\FrameworkCSharp\\PageObjectModelFramework\\PageObjectModelFramework\\pageobjects\\CarBrandPage.cs",
-              "RelativeToolTip": "PageObjectModelFramework\\pageobjects\\CarBrandPage.cs",
-              "ViewState": "AgIAAAcAAAAAAAAAAAAAACMAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-12T17:31:12.488Z"
             }
           ]
         }

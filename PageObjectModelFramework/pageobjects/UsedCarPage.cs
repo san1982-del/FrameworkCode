@@ -1,5 +1,7 @@
 ﻿using OpenQA.Selenium;
+using OpenQA.Selenium.Support.UI;
 using PageObjectModelFramework.basetest;
+using SeleniumExtras.WaitHelpers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,26 +19,29 @@ namespace PageObjectModelFramework.pageobjects
         }
             public void SearchUsedcars(string carname, string carbrand, string cartitle, string searchtype)
             {
-               BaseTest.log.Info("city selection icon to be selected first");
-               BasePage.keyword.Click("UsedCarPage", "locationicon", "XPATH");
-               BasePage.keyword.Click("HomePage", "citiselection", "XPATH");
-               BasePage.keyword.Click("HomePage", "citiselectionpopup", "XPATH");
+
             if (searchtype == "car")
             {
                 BasePage.keyword.Type("UsedCarPage", "searchsecondhandcar", "XPATH", carname);
                 BaseTest.log.Info("Carname " + carname + " is entered for Search ");
+
             }
             else if (searchtype == "brand")
             {
                 BasePage.keyword.Type("UsedCarPage", "searchsecondhandcar", "XPATH", carbrand);
                 BaseTest.log.Info("Car Brand Name " + carbrand + " is entered for Search ");
+                
             }
+           
+            //WebDriverWait wait = new WebDriverWait(BaseTest.GetDriver(), TimeSpan.FromSeconds(5));
+            //wait.Until(ExpectedConditions.ElementSelectionStateToBe(BasePage.keyword.FindWebElement("UsedCarPage", "searchbutton", "XPATH"), true));
+ 
+            BasePage.keyword.Click("UsedCarPage", "searchbutton", "XPATH");
+            BaseTest.log.Info("search is clicked ");
+           
+            Thread.Sleep(9000);
 
-                System.Collections.ObjectModel.ReadOnlyCollection<IWebElement> menu = BasePage.keyword.GetWebElements("UsedCarPage", "dropdownmenu", "XPATH");
-                BasePage.carBase.SearchDropDownSelection(carname, carbrand, cartitle, menu);
-                Thread.Sleep(5000);
-            
-               
-            }
+
+        }
     }
 }

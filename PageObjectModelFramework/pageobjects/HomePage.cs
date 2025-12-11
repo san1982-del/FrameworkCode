@@ -1,109 +1,152 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
-using OpenQA.Selenium.Support.UI;
 using PageObjectModelFramework.basetest;
 using PageObjectModelFramework.utilities;
-using SeleniumExtras.WaitHelpers;
+using SeleniumExtras.PageObjects;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static Microsoft.ApplicationInsights.MetricDimensionNames.TelemetryContext;
 
 namespace PageObjectModelFramework.pageobjects
 {
     internal class HomePage:BasePage
     {
+        // Page Factory Elements - No more XML locators needed!
+        [FindsBy(How = How.XPath, Using = "//div[normalize-space()='NEW CARS']")]
+        private IWebElement newCarMenu;
+
+        [FindsBy(How = How.XPath, Using = "//div[text()='Find New Cars']")]
+        private IWebElement findNewCarLink;
+
+        [FindsBy(How = How.XPath, Using = "//div[text()='USED CARS']")]
+        private IWebElement usedCarsMenu;
+
+        [FindsBy(How = How.XPath, Using = "//div[contains(text(),'Explore Used Cars')]")]
+        private IWebElement exploreUsedCarsLink;
+
+        [FindsBy(How = How.XPath, Using = "//input[contains(@class,'OMyJgF ayFmbh R67Xgy b36DQo CXPRav MdoJAO jCabaD Cxdcp3')]")]
+        private IWebElement searchBox;
+
+        [FindsBy(How = How.XPath, Using = "//div/div/ul/li[1]/ul/li")]
+        private IList<IWebElement> searchDropdownMenuItems;
+
+        [FindsBy(How = How.XPath, Using = "//div[@class='o-ex o-fJ o-bN o-cV o-f']//*[name()='svg']")]
+        private IWebElement locationIcon;
+
+        [FindsBy(How = How.XPath, Using = "//img[@title='Mumbai']")]
+        private IWebElement mumbaiCityOption;
+
+        [FindsBy(How = How.XPath, Using = "//div/div[1]/div/div/span[3]")]
+        private IWebElement usedSearchTab;
+
+        // Constructor
         public HomePage(IWebDriver driver) : base(driver)
         {
         }
 
+        // Fluent method - Returns NewCarPage
         public NewCarPage FindNewCar()
         {
+            var actions = new Actions(driver);
 
-            keyword.MoveToElemet("HomePage", "newcar", "XPATH");
-            keyword.Click("HomePage", "findnewcar", "XPATH");
+            WaitForElementToBeVisible(newCarMenu);
+            actions.MoveToElement(newCarMenu).Perform();
+
+            WaitForElementToBeClickable(findNewCarLink);
+            findNewCarLink.Click();
+
+            BaseTest.GetExtentTest()?.Info("Navigated to New Cars page");
+            BaseTest.log.Info("New Cars page navigation completed");
 
             return new NewCarPage(driver);
         }
 
-        public void FindYourRightCarSearch(string carname, string carbrand, string cartitle, string searchtype)
-        {
-            if (searchtype == "car")
-            {
-                BasePage.keyword.Type("HomePage", "findyourrightcar", "XPATH", carname);
-            }
-            else if (searchtype == "brand")
-            {
-                BasePage.keyword.Type("HomePage", "findyourrightcar", "XPATH", carbrand);
-            }
-
-            System.Collections.ObjectModel.ReadOnlyCollection<IWebElement> menu = BasePage.keyword.GetWebElements("HomePage", "findyourrightcardropdownmenu", "XPATH");
-            BasePage.carBase.SearchDropDownSelection(carname, carbrand, cartitle, menu);
-            Thread.Sleep(5000);
-        }
-
-        public void FindYourRightUsed_CarSearch(string carname, string carbrand, string cartitle, string searchtype)
-        {
-            BasePage.keyword.Click("HomePage", "locationicon", "XPATH");
-            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(5));
-            wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//img[@title='Mumbai']")));
-
-            BasePage.keyword.Click("HomePage", "citiselection", "XPATH");
-            BasePage.keyword.Click("HomePage", "citiselectionpopup", "XPATH");
-            Thread.Sleep(5000);
-            BasePage.keyword.Click("HomePage", "usedsearch", "XPATH");
-        
-            if (searchtype == "car")
-            {
-                BasePage.keyword.Type("HomePage", "findyourrightcar", "XPATH", carname);
-            }
-            else if (searchtype == "brand")
-            {
-                BasePage.keyword.Type("HomePage", "findyourrightcar", "XPATH", carbrand);
-            }
-
-            WebDriverWait wait1 = new WebDriverWait(driver, TimeSpan.FromSeconds(5));
-            wait1.Until(ExpectedConditions.ElementIsVisible(By.XPath("//div/div/ul/li[1]/ul/li")));
-            System.Collections.ObjectModel.ReadOnlyCollection<IWebElement> menu = BasePage.keyword.GetWebElements("HomePage", "findyourrightcardropdownmenu", "XPATH");
-          
-            foreach (IWebElement item in menu)
-            {
-                Console.WriteLine(item.GetAttribute("data-label"));
-                if (item.GetAttribute("data-label") == "Used " + carname + " in Mumbai")
-                {
-                    item.Click();
-                    Assert.That(carname.Equals(BasePage.carBase.ValidatePageTitle()), "car titles not matching for : " + carname);
-                    break;
-                }
-                else if (item.GetAttribute("data-label") == "Used " + carbrand + " in Mumbai")
-                {
-                    menu.Count();
-                    item.Click();
-                    Assert.That(cartitle.Equals(BasePage.carBase.ValidatePageTitle()), "car titles not matching for : " + cartitle);
-                    break;
-                }
-            }
-
-            Thread.Sleep(10000);
-        }
-
-        public static IEnumerable<TestCaseData> GetTestData()
-        {
-
-            var columns = new List<string> { "browser", "runmode", "carbrand", "cartitle", "carname" };
-
-            return DataUtil.GetTestDataFromExcel(Directory.GetParent(Environment.CurrentDirectory).Parent.Parent.FullName + "\\resources\\testdata.xlsx", "FindNewCar", columns);
-
-        }
-
+        // Fluent method - Returns UsedCarPage
         public UsedCarPage ExploreUsedCar()
         {
-            BasePage.keyword.MoveToElemet("HomePage", "usedcars", "XPATH");
-            BasePage.keyword.Click("HomePage", "exploreusedcars", "XPATH");
+            var actions = new Actions(driver);
+
+            WaitForElementToBeVisible(usedCarsMenu);
+            actions.MoveToElement(usedCarsMenu).Perform();
+
+            WaitForElementToBeClickable(exploreUsedCarsLink);
+            exploreUsedCarsLink.Click();
+
+            BaseTest.GetExtentTest()?.Info("Navigated to Used Cars page");
             BaseTest.log.Info("Used Cars page is launched");
+
             return new UsedCarPage(driver);
+        }
+
+        // Search functionality with improved wait strategy
+        public HomePage SearchForCar(string searchTerm)
+        {
+            WaitForElementToBeVisible(searchBox);
+            searchBox.Clear();
+            searchBox.SendKeys(searchTerm);
+
+            BaseTest.GetExtentTest()?.Info($"Entered search term: {searchTerm}");
+
+            return this; // Return this for method chaining
+        }
+
+        // Select from dropdown with intelligent wait
+        public HomePage SelectFromDropdown(string itemText)
+        {
+            // Wait for dropdown items to be visible
+            waitHelper.WaitForElements(By.XPath("//div/div/ul/li[1]/ul/li"));
+
+            foreach (var item in searchDropdownMenuItems)
+            {
+                if (item.GetAttribute("data-label").Contains(itemText))
+                {
+                    WaitForElementToBeClickable(item);
+                    item.Click();
+
+                    BaseTest.GetExtentTest()?.Info($"Selected dropdown item: {itemText}");
+                    break;
+                }
+            }
+
+            return this; // Return this for method chaining
+        }
+
+        // Select city location
+        public HomePage SelectCity(string cityName)
+        {
+            WaitForElementToBeClickable(locationIcon);
+            locationIcon.Click();
+
+            // Wait for Mumbai option to appear
+            WaitForElementToBeVisible(mumbaiCityOption);
+            mumbaiCityOption.Click();
+
+            BaseTest.GetExtentTest()?.Info($"Selected city: {cityName}");
+
+            return this; // Return this for method chaining
+        }
+
+        // Switch to used car search
+        public HomePage SwitchToUsedCarSearch()
+        {
+            WaitForElementToBeClickable(usedSearchTab);
+            usedSearchTab.Click();
+
+            BaseTest.GetExtentTest()?.Info("Switched to used car search");
+
+            return this; // Return this for method chaining
+        }
+
+        // Data provider method (unchanged)
+        public static IEnumerable<TestCaseData> GetTestData()
+        {
+            var columns = new List<string> { "browser", "runmode", "carbrand", "cartitle", "carname" };
+            return DataUtil.GetTestDataFromExcel(
+                Directory.GetParent(Environment.CurrentDirectory).Parent.Parent.FullName + "\\resources\\testdata.xlsx",
+                "FindNewCar",
+                columns);
         }
     }
 }

@@ -1,6 +1,4 @@
-﻿using OpenQA.Selenium;
-using OpenQA.Selenium.Interactions;
-using PageObjectModelFramework.basetest;
+﻿using PageObjectModelFramework.basetest;
 using PageObjectModelFramework.pageobjects;
 using PageObjectModelFramework.utilities;
 using System;
@@ -12,40 +10,56 @@ using System.Threading.Tasks;
 namespace PageObjectModelFramework.testcases
 {
     [TestFixture]
-   // [Parallelizable]
-    internal class FindNewCarsTest :BaseTest
+    [Parallelizable]
+    internal class FindNewCarsTest : BaseTest
     {
+        [Parallelizable(ParallelScope.Children)]
+        [Test, TestCaseSource(nameof(GetTestData)), Category("regression"), Retry(1)]
+        public void TestFindNewCar(string browser, string runmode, string carbrand, string cartitle, string carname)
+        {
+            // Check if test should run
+            runmodecheck(runmode);
 
-        // [Parallelizable(ParallelScope.Children)]
-        [Test, TestCaseSource(nameof(GetTestData)), Category("bvt"), Retry(1)]
-        public void TestFindNewCar(string browser, string runmode, string carbrand,string cartitle, string carname)
-        {   
+            // Setup browser
             SetUp(browser);
-            BaseTest.log.Info(browser+" Browser is launched");
-            HomePage homePage = new HomePage(driver.Value);
-            BaseTest.log.Info("Homepage is launched");
-            NewCarPage newcarbrand = homePage.FindNewCar();
-            newcarbrand.ViewBrand();
-            CarBrandPage Brandpage = newcarbrand.OpenCarBrandPage(carbrand, newcarbrand);
-            Console.WriteLine(BasePage.carBase.ValidatePageTitle());
-            Assert.That(cartitle.Equals(BasePage.carBase.ValidatePageTitle()), "Car Brand title not matching for : "+cartitle);
-            CarNamePage carpage = Brandpage.OpenCarNamePage(carname);
-            Console.WriteLine(BasePage.carBase.ValidatePageTitle());
-            Assert.That(carname.Equals(BasePage.carBase.ValidatePageTitle()), "Car Name title not matching for : "+carname);
-            carpage.GetCarPrice();
-            BaseTest.GetExtentTest().Info("Price of " + carname+" is "  +carpage.GetCarPrice());
-           string webtabledta = carpage.GetCarVariantWebTable();
-            BaseTest.GetExtentTest().Info(webtabledta);
+
+            try
+            {
+                // FLUENT PATTERN - Method Chaining!
+                // Notice how readable and clean this is compared to before
+                var carPrice = new HomePage(driver.Value)
+                    .FindNewCar()                          // Navigate to new cars
+                    .ViewBrand()                           // View all brands
+                    .OpenCarBrandPage(carbrand)            // Open specific brand
+                    .OpenCarNamePage(carname)              // Open specific car
+                    .GetCarPrice();                        // Get the price
+
+                // Assertions
+                string actualTitle = driver.Value.Title;
+                Assert.That(actualTitle, Does.Contain(carname),
+                    $"Car Name title not matching. Expected: {carname}, Actual: {actualTitle}");
+
+                // Log results
+                BaseTest.GetExtentTest()?.Info($"Price of {carname} is {carPrice}");
+                BaseTest.log.Info($"Test completed successfully for {carname}");
+
+                Console.WriteLine($"Successfully validated {carname} with price {carPrice}");
+            }
+            catch (Exception ex)
+            {
+                BaseTest.GetExtentTest()?.Fail($"Test failed with error: {ex.Message}");
+                BaseTest.log.Error($"Test execution failed: {ex.Message}", ex);
+                throw;
+            }
         }
 
         public static IEnumerable<TestCaseData> GetTestData()
         {
-
-            var columns = new List<string> { "browser", "runmode","carbrand","cartitle","carname"};
-
-            return DataUtil.GetTestDataFromExcel(Directory.GetParent(Environment.CurrentDirectory).Parent.Parent.FullName + "\\resources\\testdata.xlsx", "FindNewCar", columns);
-
+            var columns = new List<string> { "browser", "runmode", "carbrand", "cartitle", "carname" };
+            return DataUtil.GetTestDataFromExcel(
+                Directory.GetParent(Environment.CurrentDirectory).Parent.Parent.FullName + "\\resources\\testdata.xlsx",
+                "FindNewCar",
+                columns);
         }
-
     }
 }

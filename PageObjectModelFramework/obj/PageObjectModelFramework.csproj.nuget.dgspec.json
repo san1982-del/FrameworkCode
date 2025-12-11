@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\FrameworkCSharp\\PageObjectModelFramework\\PageObjectModelFramework\\PageObjectModelFramework.csproj": {}
+    "D:\\FrameworkCSharpEnhanced\\PageObjectModelFramework\\PageObjectModelFramework\\PageObjectModelFramework.csproj": {}
   },
   "projects": {
-    "D:\\FrameworkCSharp\\PageObjectModelFramework\\PageObjectModelFramework\\PageObjectModelFramework.csproj": {
+    "D:\\FrameworkCSharpEnhanced\\PageObjectModelFramework\\PageObjectModelFramework\\PageObjectModelFramework.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\FrameworkCSharp\\PageObjectModelFramework\\PageObjectModelFramework\\PageObjectModelFramework.csproj",
+        "projectUniqueName": "D:\\FrameworkCSharpEnhanced\\PageObjectModelFramework\\PageObjectModelFramework\\PageObjectModelFramework.csproj",
         "projectName": "PageObjectModelFramework",
-        "projectPath": "D:\\FrameworkCSharp\\PageObjectModelFramework\\PageObjectModelFramework\\PageObjectModelFramework.csproj",
+        "projectPath": "D:\\FrameworkCSharpEnhanced\\PageObjectModelFramework\\PageObjectModelFramework\\PageObjectModelFramework.csproj",
         "packagesPath": "C:\\Users\\Sandeep\\.nuget\\packages\\",
-        "outputPath": "D:\\FrameworkCSharp\\PageObjectModelFramework\\PageObjectModelFramework\\obj\\",
+        "outputPath": "D:\\FrameworkCSharpEnhanced\\PageObjectModelFramework\\PageObjectModelFramework\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Sandeep\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -46,6 +46,14 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "DotNetSeleniumExtras.PageObjects": {
+              "target": "Package",
+              "version": "[3.11.0, )"
+            },
+            "DotNetSeleniumExtras.PageObjects.Core": {
+              "target": "Package",
+              "version": "[4.3.0, )"
+            },
             "EPPlus": {
               "target": "Package",
               "version": "[8.2.1, )"
@@ -115,7 +123,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.307/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.308/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

@@ -1,10 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "xs7PvPTVR0w=",
+  "dgSpecHash": "DrEmKeWFJp0=",
   "success": true,
-  "projectFilePath": "D:\\FrameworkCSharp\\PageObjectModelFramework\\PageObjectModelFramework\\PageObjectModelFramework.csproj",
+  "projectFilePath": "D:\\FrameworkCSharpEnhanced\\PageObjectModelFramework\\PageObjectModelFramework\\PageObjectModelFramework.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Sandeep\\.nuget\\packages\\coverlet.collector\\6.0.4\\coverlet.collector.6.0.4.nupkg.sha512",
+    "C:\\Users\\Sandeep\\.nuget\\packages\\dotnetseleniumextras.pageobjects\\3.11.0\\dotnetseleniumextras.pageobjects.3.11.0.nupkg.sha512",
+    "C:\\Users\\Sandeep\\.nuget\\packages\\dotnetseleniumextras.pageobjects.core\\4.3.0\\dotnetseleniumextras.pageobjects.core.4.3.0.nupkg.sha512",
     "C:\\Users\\Sandeep\\.nuget\\packages\\epplus\\8.2.1\\epplus.8.2.1.nupkg.sha512",
     "C:\\Users\\Sandeep\\.nuget\\packages\\epplus.interfaces\\8.1.0\\epplus.interfaces.8.1.0.nupkg.sha512",
     "C:\\Users\\Sandeep\\.nuget\\packages\\extentreports\\5.0.4\\extentreports.5.0.4.nupkg.sha512",

@@ -1,10 +1,9 @@
 ﻿using OpenQA.Selenium;
 using PageObjectModelFramework.basetest;
+using SeleniumExtras.PageObjects;
 using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Linq;
-using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -12,46 +11,83 @@ namespace PageObjectModelFramework.pageobjects
 {
     internal class CarNamePage : BasePage
     {
-        
+        // Page Factory Elements
+        [FindsBy(How = How.XPath, Using = "//div[2]/div[1]/div[2]/div[1]/span")]
+        private IWebElement carPriceElement;
+
+        [FindsBy(How = How.XPath, Using = "//button[contains(text(),'View Variants')]")]
+        private IWebElement viewVariantsButton;
+
+        [FindsBy(How = How.XPath, Using = "//section/div/div[2]/table")]
+        private IWebElement variantTable;
+
+        [FindsBy(How = How.XPath, Using = "//section/div/div[2]/table/tbody/tr")]
+        private IList<IWebElement> tableRows;
+
+        [FindsBy(How = How.XPath, Using = "//section/div/div[2]/table/tbody/tr[1]/td")]
+        private IList<IWebElement> tableColumns;
+
+        // Constructor
         public CarNamePage(IWebDriver driver) : base(driver)
         {
-
         }
 
+        // Get car price with improved wait
         public string GetCarPrice()
         {
-            string price = BasePage.keyword.GetText("CarPage", "carprice", "XPATH");
+            WaitForElementToBeVisible(carPriceElement);
+            string price = carPriceElement.Text;
+
+            BaseTest.GetExtentTest()?.Info($"Retrieved car price: {price}");
+            BaseTest.log.Info($"Car price: {price}");
+
             return price;
         }
 
+        // Get car variant table data with improved wait
         public string GetCarVariantWebTable()
         {
-            string tabledata = "";
-            BasePage.keyword.Click("CarPage", "carvariant", "XPATH");
-            IWebElement carvariantwebtable = BasePage.keyword.FindWebElement("CarPage", "webtable", "XPATH");
-            System.Collections.ObjectModel.ReadOnlyCollection<IWebElement> rows = BasePage.keyword.GetWebElementsFromVariable("CarPage", "webtablerow", "XPATH", carvariantwebtable);
-            System.Collections.ObjectModel.ReadOnlyCollection<IWebElement> cols = BasePage.keyword.GetWebElementsFromVariable("CarPage", "webtablecolumn", "XPATH", carvariantwebtable);
-        
-            int total_rows = rows.Count;
-            int total_cols = cols.Count;
-            string start_xpath = "//section/div/div[2]/table/tbody/tr[";
-            string middle_xpath = "]/td[";
-            string end_xpath = "]";
+            StringBuilder tableData = new StringBuilder();
 
-            foreach (int i in Enumerable.Range(1, total_rows))
+            try
             {
-                foreach (int j in Enumerable.Range(1, total_cols))
+                // Check if variants button exists and click it
+                if (viewVariantsButton.Displayed)
                 {
-                     string tabledatainfo = driver.FindElement(By.XPath(start_xpath + i + middle_xpath + j + end_xpath)).Text + " ";
-                    //Console.Write(tabledata);
-                    tabledata += tabledatainfo + "\t"; // use tab between columns
-
+                    WaitForElementToBeClickable(viewVariantsButton);
+                    viewVariantsButton.Click();
                 }
-                tabledata += Environment.NewLine; // new line after each row
+
+                // Wait for table to load
+                WaitForElementToBeVisible(variantTable);
+                waitHelper.WaitForElements(By.XPath("//section/div/div[2]/table/tbody/tr"));
+
+                int totalRows = tableRows.Count;
+                int totalCols = tableColumns.Count;
+
+                BaseTest.GetExtentTest()?.Info($"Variant table has {totalRows} rows and {totalCols} columns");
+
+                // Extract table data
+                for (int i = 1; i <= totalRows; i++)
+                {
+                    for (int j = 1; j <= totalCols; j++)
+                    {
+                        var cellLocator = By.XPath($"//section/div/div[2]/table/tbody/tr[{i}]/td[{j}]");
+                        var cell = waitHelper.WaitForElement(cellLocator);
+
+                        tableData.Append(cell.Text)
+                                 .Append(" | ");
+                    }
+                    tableData.Append("<br>");
+                }
+            }
+            catch (Exception ex)
+            {
+                BaseTest.GetExtentTest()?.Warning($"Could not retrieve variant table: {ex.Message}");
+                BaseTest.log.Warn($"Variant table error: {ex.Message}");
             }
 
-            return tabledata.Trim();
+            return tableData.ToString();
         }
-
     }
 }
