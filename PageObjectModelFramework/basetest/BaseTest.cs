@@ -108,7 +108,7 @@ namespace PageObjectModelFramework.basetest
             {
                 case "chrome":
                     var chrome = new ChromeOptions();
-                    chrome.AddArgument("--headless=new");
+                    //chrome.AddArgument("--headless=new");
                     chrome.AddArgument("--no-sandbox");
                     chrome.AddArgument("--disable-dev-shm-usage");
                     chrome.AddArgument("--disable-gpu");
@@ -117,7 +117,7 @@ namespace PageObjectModelFramework.basetest
 
                 case "firefox":
                     var ff = new FirefoxOptions();
-                    ff.AddArgument("--headless");
+                   // ff.AddArgument("--headless");
                     ff.AddArgument("--width=1920");
                     ff.AddArgument("--height=1080");
                     return ff;

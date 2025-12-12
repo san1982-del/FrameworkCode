@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PageObjectModelFramework")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+85a63a8bafbc6ee8dd6983b90ebd3e70457f28c7")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+406167cf04fa9b8f24c5200f84d21193ce862eca")]
 [assembly: System.Reflection.AssemblyProductAttribute("PageObjectModelFramework")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PageObjectModelFramework")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

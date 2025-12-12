@@ -8,3 +8,227 @@
 2025-12-11 13:49:10,995 [NUnit.Fw.ParallelWorker#4] INFO  PageObjectModelFramework.basetest.BaseTest - Car price: Rs. 2.01 Crore
 2025-12-11 13:49:11,019 [NUnit.Fw.ParallelWorker#4] INFO  PageObjectModelFramework.basetest.BaseTest - Test completed successfully for BMW M5
 2025-12-11 13:49:11,022 [NUnit.Fw.ParallelWorker#4] INFO  PageObjectModelFramework.basetest.BaseTest - Test Execution is Completed
+2025-12-12 12:06:40,368 [NUnit.Fw.ParallelWorker#1] INFO  PageObjectModelFramework.basetest.BaseTest - Test Execution is Started
+2025-12-12 12:06:45,003 [NUnit.Fw.ParallelWorker#1] INFO  PageObjectModelFramework.basetest.BaseTest - Test Execution is Completed
+2025-12-12 12:06:59,337 [NUnit.Fw.ParallelWorker#3] INFO  PageObjectModelFramework.basetest.BaseTest - Test Execution Completed
+2025-12-12 12:08:41,211 [NUnit.Fw.ParallelWorker#3] INFO  PageObjectModelFramework.basetest.BaseTest - Test Execution is Started
+2025-12-12 12:09:07,217 [NUnit.Fw.ParallelWorker#3] INFO  PageObjectModelFramework.basetest.BaseTest - New Cars page navigation completed
+2025-12-12 12:09:08,279 [NUnit.Fw.ParallelWorker#3] INFO  PageObjectModelFramework.basetest.BaseTest - View Brand button clicked
+2025-12-12 12:09:09,771 [NUnit.Fw.ParallelWorker#3] ERROR PageObjectModelFramework.basetest.BaseTest - Test execution failed: element click intercepted: Element <a title="Kia" class="o-d o-os o-kY " href="/kia-cars/">...</a> is not clickable at point (690, 230). Other element would receive the click: <div class="o-j0 o-ef">...</div>
+  (Session info: chrome=143.0.7499.41)
+OpenQA.Selenium.ElementClickInterceptedException: element click intercepted: Element <a title="Kia" class="o-d o-os o-kY " href="/kia-cars/">...</a> is not clickable at point (690, 230). Other element would receive the click: <div class="o-j0 o-ef">...</div>
+  (Session info: chrome=143.0.7499.41)
+   at OpenQA.Selenium.WebDriver.UnpackAndThrowOnError(Response errorResponse, String commandToExecute)
+   at OpenQA.Selenium.WebDriver.ExecuteAsync(String driverCommandToExecute, Dictionary`2 parameters)
+   at OpenQA.Selenium.WebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)
+   at OpenQA.Selenium.WebElement.Execute(String commandToExecute, Dictionary`2 parameters)
+   at OpenQA.Selenium.WebElement.Click()
+   at SeleniumExtras.PageObjects.WebElementProxy.Click()
+   at PageObjectModelFramework.pageobjects.NewCarPage.OpenCarBrandPage(String brandName) in D:\FrameworkCSharpEnhanced\PageObjectModelFramework\PageObjectModelFramework\PageObjects\NewCarPage.cs:line 61
+   at PageObjectModelFramework.testcases.FindNewCarsTest.TestFindNewCar(String browser, String runmode, String carbrand, String cartitle, String carname) in D:\FrameworkCSharpEnhanced\PageObjectModelFramework\PageObjectModelFramework\Testcases\FindNewCarsTest.cs:line 30
+2025-12-12 12:09:09,802 [NUnit.Fw.ParallelWorker#3] INFO  PageObjectModelFramework.basetest.BaseTest - Test Execution is Completed
+2025-12-12 12:09:21,004 [NUnit.Fw.ParallelWorker#2] INFO  PageObjectModelFramework.basetest.BaseTest - Test Execution Completed
+2025-12-12 12:09:51,702 [NUnit.Fw.ParallelWorker#3] INFO  PageObjectModelFramework.basetest.BaseTest - Test Execution is Started
+2025-12-12 12:10:01,003 [NUnit.Fw.ParallelWorker#3] INFO  PageObjectModelFramework.basetest.BaseTest - New Cars page navigation completed
+2025-12-12 12:10:01,711 [NUnit.Fw.ParallelWorker#3] INFO  PageObjectModelFramework.basetest.BaseTest - View Brand button clicked
+2025-12-12 12:10:03,217 [NUnit.Fw.ParallelWorker#3] ERROR PageObjectModelFramework.basetest.BaseTest - Test execution failed: element click intercepted: Element <a title="Kia" class="o-d o-os o-kY " href="/kia-cars/">...</a> is not clickable at point (690, 230). Other element would receive the click: <div class="o-j0 o-ef">...</div>
+  (Session info: chrome=143.0.7499.41)
+OpenQA.Selenium.ElementClickInterceptedException: element click intercepted: Element <a title="Kia" class="o-d o-os o-kY " href="/kia-cars/">...</a> is not clickable at point (690, 230). Other element would receive the click: <div class="o-j0 o-ef">...</div>
+  (Session info: chrome=143.0.7499.41)
+   at OpenQA.Selenium.WebDriver.UnpackAndThrowOnError(Response errorResponse, String commandToExecute)
+   at OpenQA.Selenium.WebDriver.ExecuteAsync(String driverCommandToExecute, Dictionary`2 parameters)
+   at OpenQA.Selenium.WebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)
+   at OpenQA.Selenium.WebElement.Execute(String commandToExecute, Dictionary`2 parameters)
+   at OpenQA.Selenium.WebElement.Click()
+   at SeleniumExtras.PageObjects.WebElementProxy.Click()
+   at PageObjectModelFramework.pageobjects.NewCarPage.OpenCarBrandPage(String brandName) in D:\FrameworkCSharpEnhanced\PageObjectModelFramework\PageObjectModelFramework\PageObjects\NewCarPage.cs:line 61
+   at PageObjectModelFramework.testcases.FindNewCarsTest.TestFindNewCar(String browser, String runmode, String carbrand, String cartitle, String carname) in D:\FrameworkCSharpEnhanced\PageObjectModelFramework\PageObjectModelFramework\Testcases\FindNewCarsTest.cs:line 30
+2025-12-12 12:10:03,260 [NUnit.Fw.ParallelWorker#3] INFO  PageObjectModelFramework.basetest.BaseTest - Test Execution is Completed
+2025-12-12 12:10:13,936 [NUnit.Fw.ParallelWorker#2] INFO  PageObjectModelFramework.basetest.BaseTest - Test Execution Completed
+2025-12-12 12:13:16,777 [NUnit.Fw.ParallelWorker#2] INFO  PageObjectModelFramework.basetest.BaseTest - Test Execution is Started
+2025-12-12 12:13:29,759 [NUnit.Fw.ParallelWorker#2] INFO  PageObjectModelFramework.basetest.BaseTest - New Cars page navigation completed
+2025-12-12 12:13:30,634 [NUnit.Fw.ParallelWorker#2] INFO  PageObjectModelFramework.basetest.BaseTest - View Brand button clicked
+2025-12-12 12:13:31,384 [NUnit.Fw.ParallelWorker#2] INFO  PageObjectModelFramework.basetest.BaseTest - Kia brand page opened
+2025-12-12 12:13:34,281 [NUnit.Fw.ParallelWorker#2] INFO  PageObjectModelFramework.basetest.BaseTest - Opened car name page for: Kia Sonet
+2025-12-12 12:13:38,633 [NUnit.Fw.ParallelWorker#2] INFO  PageObjectModelFramework.basetest.BaseTest - Car price: Rs. 7.30 - 14.09 Lakh
+2025-12-12 12:13:38,727 [NUnit.Fw.ParallelWorker#2] INFO  PageObjectModelFramework.basetest.BaseTest - Test completed successfully for Kia Sonet
+2025-12-12 12:13:38,729 [NUnit.Fw.ParallelWorker#2] INFO  PageObjectModelFramework.basetest.BaseTest - Test Execution is Completed
+2025-12-12 12:13:49,786 [NUnit.Fw.ParallelWorker#4] INFO  PageObjectModelFramework.basetest.BaseTest - Test Execution Completed
+2025-12-12 12:14:12,208 [NUnit.Fw.ParallelWorker#4] INFO  PageObjectModelFramework.basetest.BaseTest - Test Execution is Started
+2025-12-12 12:14:20,311 [NUnit.Fw.ParallelWorker#4] INFO  PageObjectModelFramework.basetest.BaseTest - New Cars page navigation completed
+2025-12-12 12:14:21,389 [NUnit.Fw.ParallelWorker#4] INFO  PageObjectModelFramework.basetest.BaseTest - View Brand button clicked
+2025-12-12 12:14:22,995 [NUnit.Fw.ParallelWorker#4] ERROR PageObjectModelFramework.basetest.BaseTest - Test execution failed: element click intercepted: Element <a title="Kia" class="o-d o-os o-kY " href="/kia-cars/">...</a> is not clickable at point (690, 230). Other element would receive the click: <div class="o-j0 o-ef">...</div>
+  (Session info: chrome=143.0.7499.41)
+OpenQA.Selenium.ElementClickInterceptedException: element click intercepted: Element <a title="Kia" class="o-d o-os o-kY " href="/kia-cars/">...</a> is not clickable at point (690, 230). Other element would receive the click: <div class="o-j0 o-ef">...</div>
+  (Session info: chrome=143.0.7499.41)
+   at OpenQA.Selenium.WebDriver.UnpackAndThrowOnError(Response errorResponse, String commandToExecute)
+   at OpenQA.Selenium.WebDriver.ExecuteAsync(String driverCommandToExecute, Dictionary`2 parameters)
+   at OpenQA.Selenium.WebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)
+   at OpenQA.Selenium.WebElement.Execute(String commandToExecute, Dictionary`2 parameters)
+   at OpenQA.Selenium.WebElement.Click()
+   at SeleniumExtras.PageObjects.WebElementProxy.Click()
+   at PageObjectModelFramework.pageobjects.NewCarPage.OpenCarBrandPage(String brandName) in D:\FrameworkCSharpEnhanced\PageObjectModelFramework\PageObjectModelFramework\PageObjects\NewCarPage.cs:line 61
+   at PageObjectModelFramework.testcases.FindNewCarsTest.TestFindNewCar(String browser, String runmode, String carbrand, String cartitle, String carname) in D:\FrameworkCSharpEnhanced\PageObjectModelFramework\PageObjectModelFramework\Testcases\FindNewCarsTest.cs:line 30
+2025-12-12 12:14:23,032 [NUnit.Fw.ParallelWorker#4] INFO  PageObjectModelFramework.basetest.BaseTest - Test Execution is Completed
+2025-12-12 12:14:32,301 [NUnit.Fw.ParallelWorker#1] INFO  PageObjectModelFramework.basetest.BaseTest - Test Execution Completed
+2025-12-12 12:17:39,649 [NUnit.Fw.ParallelWorker#3] INFO  PageObjectModelFramework.basetest.BaseTest - Test Execution is Started
+2025-12-12 12:17:47,879 [NUnit.Fw.ParallelWorker#3] INFO  PageObjectModelFramework.basetest.BaseTest - New Cars page navigation completed
+2025-12-12 12:17:48,696 [NUnit.Fw.ParallelWorker#3] INFO  PageObjectModelFramework.basetest.BaseTest - Kia brand page opened
+2025-12-12 12:17:49,930 [NUnit.Fw.ParallelWorker#3] INFO  PageObjectModelFramework.basetest.BaseTest - Opened car name page for: Kia Sonet
+2025-12-12 12:17:51,228 [NUnit.Fw.ParallelWorker#3] INFO  PageObjectModelFramework.basetest.BaseTest - Car price: Rs. 7.30 - 14.09 Lakh
+2025-12-12 12:17:51,251 [NUnit.Fw.ParallelWorker#3] INFO  PageObjectModelFramework.basetest.BaseTest - Test completed successfully for Kia Sonet
+2025-12-12 12:17:51,253 [NUnit.Fw.ParallelWorker#3] INFO  PageObjectModelFramework.basetest.BaseTest - Test Execution is Completed
+2025-12-12 12:17:59,603 [NUnit.Fw.ParallelWorker#4] INFO  PageObjectModelFramework.basetest.BaseTest - Test Execution Completed
+2025-12-12 12:24:25,646 [NUnit.Fw.ParallelWorker#4] INFO  PageObjectModelFramework.basetest.BaseTest - Test Execution is Started
+2025-12-12 12:24:33,728 [NUnit.Fw.ParallelWorker#4] INFO  PageObjectModelFramework.basetest.BaseTest - New Cars page navigation completed
+2025-12-12 12:24:34,563 [NUnit.Fw.ParallelWorker#4] INFO  PageObjectModelFramework.basetest.BaseTest - View Brand button clicked
+2025-12-12 12:24:36,219 [NUnit.Fw.ParallelWorker#4] ERROR PageObjectModelFramework.basetest.BaseTest - Test execution failed: element click intercepted: Element <a title="Kia" class="o-d o-os o-kY " href="/kia-cars/">...</a> is not clickable at point (690, 230). Other element would receive the click: <div class="o-j0 o-ef">...</div>
+  (Session info: chrome=143.0.7499.41)
+OpenQA.Selenium.ElementClickInterceptedException: element click intercepted: Element <a title="Kia" class="o-d o-os o-kY " href="/kia-cars/">...</a> is not clickable at point (690, 230). Other element would receive the click: <div class="o-j0 o-ef">...</div>
+  (Session info: chrome=143.0.7499.41)
+   at OpenQA.Selenium.WebDriver.UnpackAndThrowOnError(Response errorResponse, String commandToExecute)
+   at OpenQA.Selenium.WebDriver.ExecuteAsync(String driverCommandToExecute, Dictionary`2 parameters)
+   at OpenQA.Selenium.WebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)
+   at OpenQA.Selenium.WebElement.Execute(String commandToExecute, Dictionary`2 parameters)
+   at OpenQA.Selenium.WebElement.Click()
+   at SeleniumExtras.PageObjects.WebElementProxy.Click()
+   at PageObjectModelFramework.pageobjects.NewCarPage.OpenCarBrandPage(String brandName) in D:\FrameworkCSharpEnhanced\PageObjectModelFramework\PageObjectModelFramework\PageObjects\NewCarPage.cs:line 61
+   at PageObjectModelFramework.testcases.FindNewCarsTest.TestFindNewCar(String browser, String runmode, String carbrand, String cartitle, String carname) in D:\FrameworkCSharpEnhanced\PageObjectModelFramework\PageObjectModelFramework\Testcases\FindNewCarsTest.cs:line 30
+2025-12-12 12:24:36,268 [NUnit.Fw.ParallelWorker#4] INFO  PageObjectModelFramework.basetest.BaseTest - Test Execution is Completed
+2025-12-12 12:24:48,609 [NUnit.Fw.ParallelWorker#1] INFO  PageObjectModelFramework.basetest.BaseTest - Test Execution Completed
+2025-12-12 12:31:18,456 [NUnit.Fw.ParallelWorker#1] INFO  PageObjectModelFramework.basetest.BaseTest - Test Execution is Started
+2025-12-12 12:31:29,233 [NUnit.Fw.ParallelWorker#1] INFO  PageObjectModelFramework.basetest.BaseTest - New Cars page navigation completed
+2025-12-12 12:31:29,956 [NUnit.Fw.ParallelWorker#1] INFO  PageObjectModelFramework.basetest.BaseTest - View Brand button clicked
+2025-12-12 12:31:31,414 [NUnit.Fw.ParallelWorker#1] ERROR PageObjectModelFramework.basetest.BaseTest - Test execution failed: element click intercepted: Element <a title="Kia" class="o-d o-os o-kY " href="/kia-cars/">...</a> is not clickable at point (690, 230). Other element would receive the click: <div class="o-j0 o-ef">...</div>
+  (Session info: chrome=143.0.7499.41)
+OpenQA.Selenium.ElementClickInterceptedException: element click intercepted: Element <a title="Kia" class="o-d o-os o-kY " href="/kia-cars/">...</a> is not clickable at point (690, 230). Other element would receive the click: <div class="o-j0 o-ef">...</div>
+  (Session info: chrome=143.0.7499.41)
+   at OpenQA.Selenium.WebDriver.UnpackAndThrowOnError(Response errorResponse, String commandToExecute)
+   at OpenQA.Selenium.WebDriver.ExecuteAsync(String driverCommandToExecute, Dictionary`2 parameters)
+   at OpenQA.Selenium.WebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)
+   at OpenQA.Selenium.WebElement.Execute(String commandToExecute, Dictionary`2 parameters)
+   at OpenQA.Selenium.WebElement.Click()
+   at SeleniumExtras.PageObjects.WebElementProxy.Click()
+   at PageObjectModelFramework.pageobjects.NewCarPage.OpenCarBrandPage(String brandName) in D:\FrameworkCSharpEnhanced\PageObjectModelFramework\PageObjectModelFramework\PageObjects\NewCarPage.cs:line 61
+   at PageObjectModelFramework.testcases.FindNewCarsTest.TestFindNewCar(String browser, String runmode, String carbrand, String cartitle, String carname) in D:\FrameworkCSharpEnhanced\PageObjectModelFramework\PageObjectModelFramework\Testcases\FindNewCarsTest.cs:line 30
+2025-12-12 12:31:31,485 [NUnit.Fw.ParallelWorker#1] INFO  PageObjectModelFramework.basetest.BaseTest - Test Execution is Completed
+2025-12-12 12:31:44,287 [NUnit.Fw.ParallelWorker#3] INFO  PageObjectModelFramework.basetest.BaseTest - Test Execution Completed
+2025-12-12 12:40:00,525 [NUnit.Fw.ParallelWorker#1] INFO  PageObjectModelFramework.basetest.BaseTest - Test Execution is Started
+2025-12-12 12:40:10,399 [NUnit.Fw.ParallelWorker#1] INFO  PageObjectModelFramework.basetest.BaseTest - New Cars page navigation completed
+2025-12-12 12:40:11,171 [NUnit.Fw.ParallelWorker#1] INFO  PageObjectModelFramework.basetest.BaseTest - View Brand button clicked
+2025-12-12 12:40:12,894 [NUnit.Fw.ParallelWorker#1] ERROR PageObjectModelFramework.basetest.BaseTest - Test execution failed: element click intercepted: Element <a title="Kia" class="o-d o-os o-kY " href="/kia-cars/">...</a> is not clickable at point (690, 38). Other element would receive the click: <div class="o-aE o-jK o-aR o-aT o-aV o-aK o-f">...</div>
+  (Session info: chrome=143.0.7499.41)
+OpenQA.Selenium.ElementClickInterceptedException: element click intercepted: Element <a title="Kia" class="o-d o-os o-kY " href="/kia-cars/">...</a> is not clickable at point (690, 38). Other element would receive the click: <div class="o-aE o-jK o-aR o-aT o-aV o-aK o-f">...</div>
+  (Session info: chrome=143.0.7499.41)
+   at OpenQA.Selenium.WebDriver.UnpackAndThrowOnError(Response errorResponse, String commandToExecute)
+   at OpenQA.Selenium.WebDriver.ExecuteAsync(String driverCommandToExecute, Dictionary`2 parameters)
+   at OpenQA.Selenium.WebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)
+   at OpenQA.Selenium.WebElement.Execute(String commandToExecute, Dictionary`2 parameters)
+   at OpenQA.Selenium.WebElement.Click()
+   at SeleniumExtras.PageObjects.WebElementProxy.Click()
+   at PageObjectModelFramework.pageobjects.NewCarPage.OpenCarBrandPage(String brandName) in D:\FrameworkCSharpEnhanced\PageObjectModelFramework\PageObjectModelFramework\PageObjects\NewCarPage.cs:line 62
+   at PageObjectModelFramework.testcases.FindNewCarsTest.TestFindNewCar(String browser, String runmode, String carbrand, String cartitle, String carname) in D:\FrameworkCSharpEnhanced\PageObjectModelFramework\PageObjectModelFramework\Testcases\FindNewCarsTest.cs:line 30
+2025-12-12 12:40:12,948 [NUnit.Fw.ParallelWorker#1] INFO  PageObjectModelFramework.basetest.BaseTest - Test Execution is Completed
+2025-12-12 12:40:25,559 [NUnit.Fw.ParallelWorker#3] INFO  PageObjectModelFramework.basetest.BaseTest - Test Execution Completed
+2025-12-12 12:41:23,539 [NUnit.Fw.ParallelWorker#1] INFO  PageObjectModelFramework.basetest.BaseTest - Test Execution is Started
+2025-12-12 12:41:33,026 [NUnit.Fw.ParallelWorker#1] INFO  PageObjectModelFramework.basetest.BaseTest - New Cars page navigation completed
+2025-12-12 12:41:34,036 [NUnit.Fw.ParallelWorker#1] INFO  PageObjectModelFramework.basetest.BaseTest - View Brand button clicked
+2025-12-12 12:41:35,662 [NUnit.Fw.ParallelWorker#1] ERROR PageObjectModelFramework.basetest.BaseTest - Test execution failed: element click intercepted: Element <a title="Kia" class="o-d o-os o-kY " href="/kia-cars/">...</a> is not clickable at point (690, 214). Other element would receive the click: <div class="o-j1 o-js">...</div>
+  (Session info: chrome=143.0.7499.41)
+OpenQA.Selenium.ElementClickInterceptedException: element click intercepted: Element <a title="Kia" class="o-d o-os o-kY " href="/kia-cars/">...</a> is not clickable at point (690, 214). Other element would receive the click: <div class="o-j1 o-js">...</div>
+  (Session info: chrome=143.0.7499.41)
+   at OpenQA.Selenium.WebDriver.UnpackAndThrowOnError(Response errorResponse, String commandToExecute)
+   at OpenQA.Selenium.WebDriver.ExecuteAsync(String driverCommandToExecute, Dictionary`2 parameters)
+   at OpenQA.Selenium.WebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)
+   at OpenQA.Selenium.WebElement.Execute(String commandToExecute, Dictionary`2 parameters)
+   at OpenQA.Selenium.WebElement.Click()
+   at SeleniumExtras.PageObjects.WebElementProxy.Click()
+   at PageObjectModelFramework.pageobjects.NewCarPage.OpenCarBrandPage(String brandName) in D:\FrameworkCSharpEnhanced\PageObjectModelFramework\PageObjectModelFramework\PageObjects\NewCarPage.cs:line 62
+   at PageObjectModelFramework.testcases.FindNewCarsTest.TestFindNewCar(String browser, String runmode, String carbrand, String cartitle, String carname) in D:\FrameworkCSharpEnhanced\PageObjectModelFramework\PageObjectModelFramework\Testcases\FindNewCarsTest.cs:line 30
+2025-12-12 12:41:35,702 [NUnit.Fw.ParallelWorker#1] INFO  PageObjectModelFramework.basetest.BaseTest - Test Execution is Completed
+2025-12-12 12:41:47,401 [NUnit.Fw.ParallelWorker#3] INFO  PageObjectModelFramework.basetest.BaseTest - Test Execution Completed
+2025-12-12 12:44:51,999 [NUnit.Fw.ParallelWorker#2] INFO  PageObjectModelFramework.basetest.BaseTest - Test Execution is Started
+2025-12-12 12:44:51,999 [NUnit.Fw.ParallelWorker#4] INFO  PageObjectModelFramework.basetest.BaseTest - Test Execution is Started
+2025-12-12 12:44:51,999 [NUnit.Fw.ParallelWorker#1] INFO  PageObjectModelFramework.basetest.BaseTest - Test Execution is Started
+2025-12-12 12:44:51,999 [NUnit.Fw.ParallelWorker#3] INFO  PageObjectModelFramework.basetest.BaseTest - Test Execution is Started
+2025-12-12 12:45:34,619 [NUnit.Fw.ParallelWorker#3] INFO  PageObjectModelFramework.basetest.BaseTest - New Cars page navigation completed
+2025-12-12 12:45:42,224 [NUnit.Fw.ParallelWorker#1] INFO  PageObjectModelFramework.basetest.BaseTest - New Cars page navigation completed
+2025-12-12 12:45:43,239 [NUnit.Fw.ParallelWorker#3] INFO  PageObjectModelFramework.basetest.BaseTest - View Brand button clicked
+2025-12-12 12:45:46,404 [NUnit.Fw.ParallelWorker#4] INFO  PageObjectModelFramework.basetest.BaseTest - New Cars page navigation completed
+2025-12-12 12:45:46,917 [NUnit.Fw.ParallelWorker#2] INFO  PageObjectModelFramework.basetest.BaseTest - New Cars page navigation completed
+2025-12-12 12:45:49,858 [NUnit.Fw.ParallelWorker#1] INFO  PageObjectModelFramework.basetest.BaseTest - View Brand button clicked
+2025-12-12 12:45:52,053 [NUnit.Fw.ParallelWorker#2] INFO  PageObjectModelFramework.basetest.BaseTest - View Brand button clicked
+2025-12-12 12:45:52,918 [NUnit.Fw.ParallelWorker#3] INFO  PageObjectModelFramework.basetest.BaseTest - Audi brand page opened
+2025-12-12 12:45:57,073 [NUnit.Fw.ParallelWorker#4] ERROR PageObjectModelFramework.basetest.BaseTest - Test execution failed: Timed out after 10 seconds
+OpenQA.Selenium.WebDriverTimeoutException: Timed out after 10 seconds
+ ---> OpenQA.Selenium.NoSuchElementException: Could not find element by: By.XPath: //div[contains(text(),'View More Brands')]; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+   at SeleniumExtras.PageObjects.DefaultElementLocator.LocateElement(IEnumerable`1 bys)
+   at SeleniumExtras.PageObjects.WebElementProxy.get_WrappedElement()
+   at SeleniumExtras.PageObjects.WebElementProxy.get_Enabled()
+   at PageObjectModelFramework.utilities.WaitHelper.<>c__DisplayClass4_0.<WaitForElementToBeClickable>b__0(IWebDriver drv) in D:\FrameworkCSharpEnhanced\PageObjectModelFramework\PageObjectModelFramework\Utils\WaitHelper.cs:line 33
+   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition, CancellationToken token)
+   --- End of inner exception stack trace ---
+   at OpenQA.Selenium.Support.UI.DefaultWait`1.ThrowTimeoutException(String exceptionMessage, Exception lastException)
+   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition, CancellationToken token)
+   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition)
+   at PageObjectModelFramework.utilities.WaitHelper.WaitForElementToBeClickable(IWebElement element, Int32 timeoutInSeconds) in D:\FrameworkCSharpEnhanced\PageObjectModelFramework\PageObjectModelFramework\Utils\WaitHelper.cs:line 29
+   at PageObjectModelFramework.pageobjects.BasePage.WaitForElementToBeClickable(IWebElement element) in D:\FrameworkCSharpEnhanced\PageObjectModelFramework\PageObjectModelFramework\PageObjects\BasePage.cs:line 35
+   at PageObjectModelFramework.pageobjects.NewCarPage.ViewBrand() in D:\FrameworkCSharpEnhanced\PageObjectModelFramework\PageObjectModelFramework\PageObjects\NewCarPage.cs:line 39
+   at PageObjectModelFramework.testcases.FindNewCarsTest.TestFindNewCar(String browser, String runmode, String carbrand, String cartitle, String carname) in D:\FrameworkCSharpEnhanced\PageObjectModelFramework\PageObjectModelFramework\Testcases\FindNewCarsTest.cs:line 30
+2025-12-12 12:45:57,283 [NUnit.Fw.ParallelWorker#4] INFO  PageObjectModelFramework.basetest.BaseTest - Test Execution is Completed
+2025-12-12 12:45:58,403 [NUnit.Fw.ParallelWorker#2] INFO  PageObjectModelFramework.basetest.BaseTest - BMW brand page opened
+2025-12-12 12:46:01,073 [NUnit.Fw.ParallelWorker#1] ERROR PageObjectModelFramework.basetest.BaseTest - Test execution failed: element click intercepted: Element <a title="Kia" class="o-d o-os o-kY " href="/kia-cars/">...</a> is not clickable at point (690, 230). Other element would receive the click: <div class="o-j0 o-ef">...</div>
+  (Session info: chrome=143.0.7499.41)
+OpenQA.Selenium.ElementClickInterceptedException: element click intercepted: Element <a title="Kia" class="o-d o-os o-kY " href="/kia-cars/">...</a> is not clickable at point (690, 230). Other element would receive the click: <div class="o-j0 o-ef">...</div>
+  (Session info: chrome=143.0.7499.41)
+   at OpenQA.Selenium.WebDriver.UnpackAndThrowOnError(Response errorResponse, String commandToExecute)
+   at OpenQA.Selenium.WebDriver.ExecuteAsync(String driverCommandToExecute, Dictionary`2 parameters)
+   at OpenQA.Selenium.WebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)
+   at OpenQA.Selenium.WebElement.Execute(String commandToExecute, Dictionary`2 parameters)
+   at OpenQA.Selenium.WebElement.Click()
+   at SeleniumExtras.PageObjects.WebElementProxy.Click()
+   at PageObjectModelFramework.pageobjects.NewCarPage.OpenCarBrandPage(String brandName) in D:\FrameworkCSharpEnhanced\PageObjectModelFramework\PageObjectModelFramework\PageObjects\NewCarPage.cs:line 61
+   at PageObjectModelFramework.testcases.FindNewCarsTest.TestFindNewCar(String browser, String runmode, String carbrand, String cartitle, String carname) in D:\FrameworkCSharpEnhanced\PageObjectModelFramework\PageObjectModelFramework\Testcases\FindNewCarsTest.cs:line 30
+2025-12-12 12:46:01,079 [NUnit.Fw.ParallelWorker#1] INFO  PageObjectModelFramework.basetest.BaseTest - Test Execution is Completed
+2025-12-12 12:46:06,716 [NUnit.Fw.ParallelWorker#2] INFO  PageObjectModelFramework.basetest.BaseTest - Opened car name page for: BMW M5
+2025-12-12 12:46:07,652 [NUnit.Fw.ParallelWorker#3] INFO  PageObjectModelFramework.basetest.BaseTest - Opened car name page for: Audi A4
+2025-12-12 12:46:09,402 [NUnit.Fw.ParallelWorker#3] INFO  PageObjectModelFramework.basetest.BaseTest - Car price: Rs. 46.25 - 55.11 Lakh
+2025-12-12 12:46:09,551 [NUnit.Fw.ParallelWorker#3] INFO  PageObjectModelFramework.basetest.BaseTest - Test completed successfully for Audi A4
+2025-12-12 12:46:09,551 [NUnit.Fw.ParallelWorker#3] INFO  PageObjectModelFramework.basetest.BaseTest - Test Execution is Completed
+2025-12-12 12:46:10,218 [NUnit.Fw.ParallelWorker#2] INFO  PageObjectModelFramework.basetest.BaseTest - Car price: Rs. 2.01 Crore
+2025-12-12 12:46:10,235 [NUnit.Fw.ParallelWorker#2] INFO  PageObjectModelFramework.basetest.BaseTest - Test completed successfully for BMW M5
+2025-12-12 12:46:10,235 [NUnit.Fw.ParallelWorker#2] INFO  PageObjectModelFramework.basetest.BaseTest - Test Execution is Completed
+2025-12-12 12:46:24,312 [NUnit.Fw.ParallelWorker#3] INFO  PageObjectModelFramework.basetest.BaseTest - Test Execution Completed
+2025-12-12 12:47:32,840 [NUnit.Fw.ParallelWorker#4] INFO  PageObjectModelFramework.basetest.BaseTest - Test Execution is Started
+2025-12-12 12:47:32,840 [NUnit.Fw.ParallelWorker#2] INFO  PageObjectModelFramework.basetest.BaseTest - Test Execution is Started
+2025-12-12 12:47:32,840 [NUnit.Fw.ParallelWorker#3] INFO  PageObjectModelFramework.basetest.BaseTest - Test Execution is Started
+2025-12-12 12:47:32,840 [NUnit.Fw.ParallelWorker#1] INFO  PageObjectModelFramework.basetest.BaseTest - Test Execution is Started
+2025-12-12 12:48:19,514 [NUnit.Fw.ParallelWorker#4] INFO  PageObjectModelFramework.basetest.BaseTest - New Cars page navigation completed
+2025-12-12 12:48:27,185 [NUnit.Fw.ParallelWorker#4] INFO  PageObjectModelFramework.basetest.BaseTest - View Brand button clicked
+2025-12-12 12:48:33,173 [NUnit.Fw.ParallelWorker#4] INFO  PageObjectModelFramework.basetest.BaseTest - Toyota brand page opened
+2025-12-12 12:48:34,455 [NUnit.Fw.ParallelWorker#1] INFO  PageObjectModelFramework.basetest.BaseTest - New Cars page navigation completed
+2025-12-12 12:48:39,624 [NUnit.Fw.ParallelWorker#1] INFO  PageObjectModelFramework.basetest.BaseTest - View Brand button clicked
+2025-12-12 12:48:40,651 [NUnit.Fw.ParallelWorker#4] INFO  PageObjectModelFramework.basetest.BaseTest - Opened car name page for: Toyota Fortuner
+2025-12-12 12:48:44,263 [NUnit.Fw.ParallelWorker#3] INFO  PageObjectModelFramework.basetest.BaseTest - New Cars page navigation completed
+2025-12-12 12:48:46,322 [NUnit.Fw.ParallelWorker#1] INFO  PageObjectModelFramework.basetest.BaseTest - BMW brand page opened
+2025-12-12 12:48:48,787 [NUnit.Fw.ParallelWorker#3] INFO  PageObjectModelFramework.basetest.BaseTest - View Brand button clicked
+2025-12-12 12:48:49,003 [NUnit.Fw.ParallelWorker#4] INFO  PageObjectModelFramework.basetest.BaseTest - Car price: Rs. 33.65 - 48.85 Lakh
+2025-12-12 12:48:49,068 [NUnit.Fw.ParallelWorker#4] INFO  PageObjectModelFramework.basetest.BaseTest - Test completed successfully for Toyota Fortuner
+2025-12-12 12:48:49,071 [NUnit.Fw.ParallelWorker#4] INFO  PageObjectModelFramework.basetest.BaseTest - Test Execution is Completed
+2025-12-12 12:48:50,053 [NUnit.Fw.ParallelWorker#2] INFO  PageObjectModelFramework.basetest.BaseTest - New Cars page navigation completed
+2025-12-12 12:48:51,767 [NUnit.Fw.ParallelWorker#3] INFO  PageObjectModelFramework.basetest.BaseTest - Kia brand page opened
+2025-12-12 12:48:55,586 [NUnit.Fw.ParallelWorker#1] INFO  PageObjectModelFramework.basetest.BaseTest - Opened car name page for: BMW M5
+2025-12-12 12:49:01,387 [NUnit.Fw.ParallelWorker#2] INFO  PageObjectModelFramework.basetest.BaseTest - View Brand button clicked
+2025-12-12 12:49:02,328 [NUnit.Fw.ParallelWorker#3] INFO  PageObjectModelFramework.basetest.BaseTest - Opened car name page for: Kia Sonet
+2025-12-12 12:49:03,320 [NUnit.Fw.ParallelWorker#1] INFO  PageObjectModelFramework.basetest.BaseTest - Car price: Rs. 2.01 Crore
+2025-12-12 12:49:03,358 [NUnit.Fw.ParallelWorker#1] INFO  PageObjectModelFramework.basetest.BaseTest - Test completed successfully for BMW M5
+2025-12-12 12:49:03,359 [NUnit.Fw.ParallelWorker#1] INFO  PageObjectModelFramework.basetest.BaseTest - Test Execution is Completed
+2025-12-12 12:49:05,626 [NUnit.Fw.ParallelWorker#3] INFO  PageObjectModelFramework.basetest.BaseTest - Car price: Rs. 7.30 - 14.09 Lakh
+2025-12-12 12:49:05,640 [NUnit.Fw.ParallelWorker#3] INFO  PageObjectModelFramework.basetest.BaseTest - Test completed successfully for Kia Sonet
+2025-12-12 12:49:05,641 [NUnit.Fw.ParallelWorker#3] INFO  PageObjectModelFramework.basetest.BaseTest - Test Execution is Completed
+2025-12-12 12:49:06,703 [NUnit.Fw.ParallelWorker#2] INFO  PageObjectModelFramework.basetest.BaseTest - Audi brand page opened
+2025-12-12 12:49:12,493 [NUnit.Fw.ParallelWorker#2] INFO  PageObjectModelFramework.basetest.BaseTest - Opened car name page for: Audi A4
+2025-12-12 12:49:16,179 [NUnit.Fw.ParallelWorker#2] INFO  PageObjectModelFramework.basetest.BaseTest - Car price: Rs. 46.25 - 55.11 Lakh
+2025-12-12 12:49:16,194 [NUnit.Fw.ParallelWorker#2] INFO  PageObjectModelFramework.basetest.BaseTest - Test completed successfully for Audi A4
+2025-12-12 12:49:16,194 [NUnit.Fw.ParallelWorker#2] INFO  PageObjectModelFramework.basetest.BaseTest - Test Execution is Completed
+2025-12-12 12:49:27,091 [NUnit.Fw.ParallelWorker#4] INFO  PageObjectModelFramework.basetest.BaseTest - Test Execution Completed
