@@ -67,10 +67,7 @@ namespace PageObjectModelFramework.basetest
                 GetExtentTest().Fail("Test Failed : " + TestContext.CurrentContext.Result.Message);
                 GetExtentTest().Fail(
                     "<b><font color=red>Screenshot of failure</font></b><br>",
-                    MediaEntityBuilder.CreateScreenCaptureFromPath(
-                        Directory.GetParent(Environment.CurrentDirectory).Parent.Parent.FullName +
-                        "\\screenshots\\" +
-                        fileName
+                    MediaEntityBuilder.CreateScreenCaptureFromPath("../screenshots/" + fileName
                     ).Build()
                 );
                 GetExtentTest().Fail(MarkupHelper.CreateLabel("FAIL", ExtentColor.Red));
