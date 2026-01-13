@@ -4,7 +4,7 @@ using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.UI;
-using PageObjectModelFramework.basetest;
+using PageObjectModelFramework.BaseTest;
 using SeleniumExtras.WaitHelpers;
 using System;
 using System.Collections.Generic;
@@ -14,7 +14,8 @@ using System.Threading.Tasks;
 using System.Xml.Linq;
 
 
-namespace PageObjectModelFramework.utilities 
+namespace PageObjectModelFramework.Utils
+    
 {
     internal class KeywordDriven
     {
@@ -26,52 +27,52 @@ namespace PageObjectModelFramework.utilities
         {
             if (locatorType.Contains("ID"))
             {
-                BaseTest.GetDriver().FindElement(By.Id(XMLLocatorReader.GetLocatorValue(pageName, locatorName, locatorType))).Click();
+                baseTest.GetDriver().FindElement(By.Id(XMLLocatorReader.GetLocatorValue(pageName, locatorName, locatorType))).Click();
 
             }
             else if (locatorType.Contains("XPATH"))
             {
-                BaseTest.GetDriver().FindElement(By.XPath(XMLLocatorReader.GetLocatorValue(pageName, locatorName, locatorType))).Click();
+                baseTest.GetDriver().FindElement(By.XPath(XMLLocatorReader.GetLocatorValue(pageName, locatorName, locatorType))).Click();
 
             }
             else if (locatorType.Contains("CSS"))
             {
-                BaseTest.GetDriver().FindElement(By.CssSelector(XMLLocatorReader.GetLocatorValue(pageName, locatorName, locatorType))).Click();
+                baseTest.GetDriver().FindElement(By.CssSelector(XMLLocatorReader.GetLocatorValue(pageName, locatorName, locatorType))).Click();
 
             }
             else if (locatorType.Contains("LINK"))
             {
-                BaseTest.GetDriver().FindElement(By.LinkText(XMLLocatorReader.GetLocatorValue(pageName, locatorName, locatorType))).Click();
+                baseTest.GetDriver().FindElement(By.LinkText(XMLLocatorReader.GetLocatorValue(pageName, locatorName, locatorType))).Click();
 
             }
 
-            BaseTest.GetExtentTest().Info("Clicking on an Element : "+locatorName);
+            baseTest.GetExtentTest().Info("Clicking on an Element : "+locatorName);
         }
 
         public System.Collections.ObjectModel.ReadOnlyCollection<IWebElement> GetWebElements(string pageName, string locatorName, string locatorType)
         {
             if (locatorType.Contains("ID"))
             {
-               elements = BaseTest.GetDriver().FindElements(By.Id(XMLLocatorReader.GetLocatorValue(pageName, locatorName, locatorType)));
+               elements = baseTest.GetDriver().FindElements(By.Id(XMLLocatorReader.GetLocatorValue(pageName, locatorName, locatorType)));
 
             }
             else if (locatorType.Contains("XPATH"))
             {
-                elements = BaseTest.GetDriver().FindElements(By.XPath(XMLLocatorReader.GetLocatorValue(pageName, locatorName, locatorType)));
+                elements = baseTest.GetDriver().FindElements(By.XPath(XMLLocatorReader.GetLocatorValue(pageName, locatorName, locatorType)));
 
             }
             else if (locatorType.Contains("CSS"))
             {
-                elements = BaseTest.GetDriver().FindElements(By.CssSelector(XMLLocatorReader.GetLocatorValue(pageName, locatorName, locatorType)));
+                elements = baseTest.GetDriver().FindElements(By.CssSelector(XMLLocatorReader.GetLocatorValue(pageName, locatorName, locatorType)));
 
             }
             else if (locatorType.Contains("LINK"))
             {
-                elements = BaseTest.GetDriver().FindElements(By.LinkText(XMLLocatorReader.GetLocatorValue(pageName, locatorName, locatorType)));
+                elements = baseTest.GetDriver().FindElements(By.LinkText(XMLLocatorReader.GetLocatorValue(pageName, locatorName, locatorType)));
 
             }
             
-            BaseTest.GetExtentTest().Info("Get Collection of WebElements : " + locatorName);
+            baseTest.GetExtentTest().Info("Get Collection of WebElements : " + locatorName);
             return elements;
         }
 
@@ -81,22 +82,22 @@ namespace PageObjectModelFramework.utilities
             
             if (locatorType.Contains("ID"))
             {
-               element = BaseTest.GetDriver().FindElement(By.Id(XMLLocatorReader.GetLocatorValue(pageName, locatorName, locatorType)));
-               new Actions(BaseTest.GetDriver()).MoveToElement(element).Perform();
+               element = baseTest.GetDriver().FindElement(By.Id(XMLLocatorReader.GetLocatorValue(pageName, locatorName, locatorType)));
+               new Actions(baseTest.GetDriver()).MoveToElement(element).Perform();
 
             }
             else if (locatorType.Contains("XPATH"))
             {
-                element = BaseTest.GetDriver().FindElement(By.XPath(XMLLocatorReader.GetLocatorValue(pageName, locatorName, locatorType)));
-                new Actions(BaseTest.GetDriver()).MoveToElement(element).Perform();
+                element = baseTest.GetDriver().FindElement(By.XPath(XMLLocatorReader.GetLocatorValue(pageName, locatorName, locatorType)));
+                new Actions(baseTest.GetDriver()).MoveToElement(element).Perform();
             }
             else if (locatorType.Contains("CSS"))
             {
-                element = BaseTest.GetDriver().FindElement(By.CssSelector(XMLLocatorReader.GetLocatorValue(pageName, locatorName, locatorType)));
-                new Actions(BaseTest.GetDriver()).MoveToElement(element).Perform();
+                element = baseTest.GetDriver().FindElement(By.CssSelector(XMLLocatorReader.GetLocatorValue(pageName, locatorName, locatorType)));
+                new Actions(baseTest.GetDriver()).MoveToElement(element).Perform();
             }
 
-            BaseTest.GetExtentTest().Info("Clicking on an Element : " + locatorName);
+            baseTest.GetExtentTest().Info("Clicking on an Element : " + locatorName);
         }
 
         public void Type(string pageName, string locatorName, string locatorType, string value)
@@ -104,20 +105,20 @@ namespace PageObjectModelFramework.utilities
 
             if (locatorType.Contains("ID"))
             {
-                BaseTest.GetDriver().FindElement(By.Id(XMLLocatorReader.GetLocatorValue(pageName, locatorName, locatorType))).SendKeys(value);
+                baseTest.GetDriver().FindElement(By.Id(XMLLocatorReader.GetLocatorValue(pageName, locatorName, locatorType))).SendKeys(value);
 
             }else if (locatorType.Contains("XPATH"))
             {
-                BaseTest.GetDriver().FindElement(By.XPath(XMLLocatorReader.GetLocatorValue(pageName, locatorName, locatorType))).SendKeys(value);
+                baseTest.GetDriver().FindElement(By.XPath(XMLLocatorReader.GetLocatorValue(pageName, locatorName, locatorType))).SendKeys(value);
 
             }else if (locatorType.Contains("CSS"))
             {
-                BaseTest.GetDriver().FindElement(By.CssSelector(XMLLocatorReader.GetLocatorValue(pageName, locatorName, locatorType))).SendKeys(value);
+                baseTest.GetDriver().FindElement(By.CssSelector(XMLLocatorReader.GetLocatorValue(pageName, locatorName, locatorType))).SendKeys(value);
 
             }
 
 
-            BaseTest.GetExtentTest().Info("Typing in an Element : " + locatorName+ " value entered as : "+value);
+            baseTest.GetExtentTest().Info("Typing in an Element : " + locatorName+ " value entered as : "+value);
 
         }
 
@@ -128,24 +129,24 @@ namespace PageObjectModelFramework.utilities
 
             if (locatorType.Contains("ID"))
             {
-                element = BaseTest.GetDriver().FindElement(By.Id(XMLLocatorReader.GetLocatorValue(pageName, locatorName, locatorType)));
+                element = baseTest.GetDriver().FindElement(By.Id(XMLLocatorReader.GetLocatorValue(pageName, locatorName, locatorType)));
 
             }
             else if (locatorType.Contains("XPATH"))
             {
-                element = BaseTest.GetDriver().FindElement(By.XPath(XMLLocatorReader.GetLocatorValue(pageName, locatorName, locatorType)));
+                element = baseTest.GetDriver().FindElement(By.XPath(XMLLocatorReader.GetLocatorValue(pageName, locatorName, locatorType)));
 
             }
             else if (locatorType.Contains("CSS"))
             {
-                element = BaseTest.GetDriver().FindElement(By.CssSelector(XMLLocatorReader.GetLocatorValue(pageName, locatorName, locatorType)));
+                element = baseTest.GetDriver().FindElement(By.CssSelector(XMLLocatorReader.GetLocatorValue(pageName, locatorName, locatorType)));
 
             }
 
             SelectElement selectElement = new SelectElement(element);
             selectElement.SelectByValue(value);
 
-            BaseTest.GetExtentTest().Info("Seleting an Element : " + locatorName + " selected the value as : " + value);
+            baseTest.GetExtentTest().Info("Seleting an Element : " + locatorName + " selected the value as : " + value);
 
         }
 
@@ -155,26 +156,26 @@ namespace PageObjectModelFramework.utilities
             {
                 if (locatorType.Contains("ID"))
                 {
-                    BaseTest.GetDriver().FindElement(By.Id(XMLLocatorReader.GetLocatorValue(pageName, locatorName, locatorType)));
+                    baseTest.GetDriver().FindElement(By.Id(XMLLocatorReader.GetLocatorValue(pageName, locatorName, locatorType)));
 
                 }
                 else if (locatorType.Contains("XPATH"))
                 {
-                    BaseTest.GetDriver().FindElement(By.XPath(XMLLocatorReader.GetLocatorValue(pageName, locatorName, locatorType)));
+                    baseTest.GetDriver().FindElement(By.XPath(XMLLocatorReader.GetLocatorValue(pageName, locatorName, locatorType)));
 
                 }
                 else if (locatorType.Contains("CSS"))
                 {
-                    BaseTest.GetDriver().FindElement(By.CssSelector(XMLLocatorReader.GetLocatorValue(pageName, locatorName, locatorType)));
+                    baseTest.GetDriver().FindElement(By.CssSelector(XMLLocatorReader.GetLocatorValue(pageName, locatorName, locatorType)));
 
                 }
-                BaseTest.GetExtentTest().Info("Finding an Element : " + locatorName);
+                baseTest.GetExtentTest().Info("Finding an Element : " + locatorName);
 
                 return true;
             }
             catch (Exception ex)
             {
-                BaseTest.GetExtentTest().Info("Error while finding an Element : " + locatorName);
+                baseTest.GetExtentTest().Info("Error while finding an Element : " + locatorName);
 
                 return false;
             }
@@ -184,26 +185,26 @@ namespace PageObjectModelFramework.utilities
         {
             if (locatorType.Contains("ID"))
             {
-                text = BaseTest.GetDriver().FindElement(By.Id(XMLLocatorReader.GetLocatorValue(pageName, locatorName, locatorType))).Text;
+                text = baseTest.GetDriver().FindElement(By.Id(XMLLocatorReader.GetLocatorValue(pageName, locatorName, locatorType))).Text;
 
             }
             else if (locatorType.Contains("XPATH"))
             {
-                text = BaseTest.GetDriver().FindElement(By.XPath(XMLLocatorReader.GetLocatorValue(pageName, locatorName, locatorType))).Text;
+                text = baseTest.GetDriver().FindElement(By.XPath(XMLLocatorReader.GetLocatorValue(pageName, locatorName, locatorType))).Text;
 
             }
             else if (locatorType.Contains("CSS"))
             {
-                text = BaseTest.GetDriver().FindElement(By.CssSelector(XMLLocatorReader.GetLocatorValue(pageName, locatorName, locatorType))).Text;
+                text =  baseTest.GetDriver().FindElement(By.CssSelector(XMLLocatorReader.GetLocatorValue(pageName, locatorName, locatorType))).Text;
 
             }
             else if (locatorType.Contains("LINK"))
             {
-                text = BaseTest.GetDriver().FindElement(By.LinkText(XMLLocatorReader.GetLocatorValue(pageName, locatorName, locatorType))).Text;
+                text = baseTest.GetDriver().FindElement(By.LinkText(XMLLocatorReader.GetLocatorValue(pageName, locatorName, locatorType))).Text;
 
             }
 
-            BaseTest.GetExtentTest().Info("Getting the text of an Element : " + locatorName);
+            baseTest.GetExtentTest().Info("Getting the text of an Element : " + locatorName);
             return text;
         }
 
@@ -212,26 +213,26 @@ namespace PageObjectModelFramework.utilities
 
             if (locatorType.Contains("ID"))
             {
-               webelement = BaseTest.GetDriver().FindElement(By.Id(XMLLocatorReader.GetLocatorValue(pageName, locatorName, locatorType)));
+               webelement = baseTest.GetDriver().FindElement(By.Id(XMLLocatorReader.GetLocatorValue(pageName, locatorName, locatorType)));
 
             }
             else if (locatorType.Contains("XPATH"))
             {
-                webelement = BaseTest.GetDriver().FindElement(By.XPath(XMLLocatorReader.GetLocatorValue(pageName, locatorName, locatorType)));
+                webelement = baseTest.GetDriver().FindElement(By.XPath(XMLLocatorReader.GetLocatorValue(pageName, locatorName, locatorType)));
 
             }
             else if (locatorType.Contains("CSS"))
             {
-                webelement = BaseTest.GetDriver().FindElement(By.CssSelector(XMLLocatorReader.GetLocatorValue(pageName, locatorName, locatorType)));
+                webelement = baseTest.GetDriver().FindElement(By.CssSelector(XMLLocatorReader.GetLocatorValue(pageName, locatorName, locatorType)));
 
             }
             else if (locatorType.Contains("LINK"))
             {
-                webelement = BaseTest.GetDriver().FindElement(By.LinkText(XMLLocatorReader.GetLocatorValue(pageName, locatorName, locatorType)));
+                webelement = baseTest.GetDriver().FindElement(By.LinkText(XMLLocatorReader.GetLocatorValue(pageName, locatorName, locatorType)));
 
             }
 
-            BaseTest.GetExtentTest().Info("Finding the WebElement : " + locatorName);
+            baseTest.GetExtentTest().Info("Finding the WebElement : " + locatorName);
             return webelement;
         }
 
@@ -259,7 +260,7 @@ namespace PageObjectModelFramework.utilities
 
             }
 
-            BaseTest.GetExtentTest().Info("Get Collection of WebElements : " + locatorName);
+            baseTest.GetExtentTest().Info("Get Collection of WebElements : " + locatorName);
             return elements;
         }
 

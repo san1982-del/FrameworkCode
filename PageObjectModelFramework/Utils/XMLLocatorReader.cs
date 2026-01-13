@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
 
-namespace PageObjectModelFramework.utilities
+namespace PageObjectModelFramework.Utils
 {
     internal class XMLLocatorReader
     {

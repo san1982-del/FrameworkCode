@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PageObjectModelFramework.utilities
+namespace PageObjectModelFramework.Utils
 {
     internal class WaitHelper
     {

@@ -1,14 +1,15 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
-using PageObjectModelFramework.utilities;
+using PageObjectModelFramework.Utils;
 using SeleniumExtras.PageObjects;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PageObjectModelFramework.pageobjects
+namespace PageObjectModelFramework.PageObjects
 {
     internal class BasePage
     {
@@ -17,6 +18,7 @@ namespace PageObjectModelFramework.pageobjects
         public static CarBase carBase;
         protected WebDriverWait wait;
         protected WaitHelper waitHelper;
+        public static DBManager dbManager;
 
         public BasePage(IWebDriver driver)
         {
@@ -25,6 +27,7 @@ namespace PageObjectModelFramework.pageobjects
             carBase = new CarBase(driver);
             this.wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
             this.waitHelper = new WaitHelper(driver);
+            dbManager = new DBManager();
 
             // Initialize Page Factory elements
             PageFactory.InitElements(driver, this);
@@ -44,6 +47,7 @@ namespace PageObjectModelFramework.pageobjects
         // Get page title
         public string GetPageTitle()
         {
+            waitHelper.WaitForPageLoad();
             return driver.Title;
         }
 
@@ -52,5 +56,6 @@ namespace PageObjectModelFramework.pageobjects
         {
             ((IJavaScriptExecutor)driver).ExecuteScript("arguments[0].scrollIntoView(true);", element);
         }
+
     }
 }

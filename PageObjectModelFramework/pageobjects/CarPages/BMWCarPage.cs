@@ -6,7 +6,7 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PageObjectModelFramework.pageobjects.CarPages
+namespace PageObjectModelFramework.PageObjects.CarPages
 {
     internal class BMWCarPage : BasePage
     {

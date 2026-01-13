@@ -1,13 +1,17 @@
 ﻿using OpenQA.Selenium;
-using PageObjectModelFramework.basetest;
+using MySql.Data.MySqlClient;
+using PageObjectModelFramework.BaseTest;
 using SeleniumExtras.PageObjects;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
+using PageObjectModelFramework.Utils;
+using System.Data.Common;
 
-namespace PageObjectModelFramework.pageobjects
+namespace PageObjectModelFramework.PageObjects
 {
     internal class CarNamePage : BasePage
     {
@@ -15,7 +19,7 @@ namespace PageObjectModelFramework.pageobjects
         [FindsBy(How = How.XPath, Using = "//div[2]/div[1]/div[2]/div[1]/span")]
         private IWebElement carPriceElement;
 
-        [FindsBy(How = How.XPath, Using = "//button[contains(text(),'View Variants')]")]
+        [FindsBy(How = How.XPath, Using = "//div[contains(text(),'View More Variants')]")]
         private IWebElement viewVariantsButton;
 
         [FindsBy(How = How.XPath, Using = "//section/div/div[2]/table")]
@@ -31,33 +35,37 @@ namespace PageObjectModelFramework.pageobjects
         public CarNamePage(IWebDriver driver) : base(driver)
         {
         }
-
+        
         // Get car price with improved wait
         public string GetCarPrice()
         {
             WaitForElementToBeVisible(carPriceElement);
             string price = carPriceElement.Text;
 
-            BaseTest.GetExtentTest()?.Info($"Retrieved car price: {price}");
-            BaseTest.log.Info($"Car price: {price}");
+            baseTest.GetExtentTest()?.Info($"Retrieved car price: {price}");
+            baseTest.log.Info($"Car price: {price}");
 
             return price;
         }
 
         // Get car variant table data with improved wait
-        public string GetCarVariantWebTable()
+        public List<string> GetCarVariantWebTable()
         {
-            StringBuilder tableData = new StringBuilder();
-
+            List<string> tableRowsData = new List<string>();
             try
             {
-                // Check if variants button exists and click it
-                if (viewVariantsButton.Displayed)
+                try
                 {
-                    WaitForElementToBeClickable(viewVariantsButton);
-                    viewVariantsButton.Click();
+                    // Check if variants button exists and click it
+                    if (viewVariantsButton.Displayed)
+                    {
+                        WaitForElementToBeClickable(viewVariantsButton);
+                        viewVariantsButton.Click();
+                    }
                 }
-
+                catch (NoSuchElementException)
+                { 
+                }
                 // Wait for table to load
                 WaitForElementToBeVisible(variantTable);
                 waitHelper.WaitForElements(By.XPath("//section/div/div[2]/table/tbody/tr"));
@@ -65,29 +73,33 @@ namespace PageObjectModelFramework.pageobjects
                 int totalRows = tableRows.Count;
                 int totalCols = tableColumns.Count;
 
-                BaseTest.GetExtentTest()?.Info($"Variant table has {totalRows} rows and {totalCols} columns");
+                baseTest.GetExtentTest()?.Info($"Variant table has {totalRows} rows and {totalCols} columns");
 
                 // Extract table data
                 for (int i = 1; i <= totalRows; i++)
                 {
+                    StringBuilder rowData = new StringBuilder();
                     for (int j = 1; j <= totalCols; j++)
                     {
                         var cellLocator = By.XPath($"//section/div/div[2]/table/tbody/tr[{i}]/td[{j}]");
                         var cell = waitHelper.WaitForElement(cellLocator);
 
-                        tableData.Append(cell.Text)
-                                 .Append(" | ");
+                        var cleanText = System.Text.RegularExpressions.Regex.Replace(cell.Text, @"\s+", " ").Trim();
+                        rowData.Append(cleanText).Append(" | ");
                     }
-                    tableData.Append("<br>");
+                    tableRowsData.Add(rowData.ToString().TrimEnd(' ', '|'));
                 }
             }
             catch (Exception ex)
             {
-                BaseTest.GetExtentTest()?.Warning($"Could not retrieve variant table: {ex.Message}");
-                BaseTest.log.Warn($"Variant table error: {ex.Message}");
+                baseTest.GetExtentTest()?.Warning($"Could not retrieve variant table: {ex.Message}");
+                baseTest.log.Warn($"Variant table error: {ex.Message}");
             }
 
-            return tableData.ToString();
+            return tableRowsData;
         }
+
+        
+            
     }
 }

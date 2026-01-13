@@ -1,14 +1,13 @@
 ﻿using OpenQA.Selenium;
-using PageObjectModelFramework.basetest;
-using PageObjectModelFramework.pageobjects.CarBrandPages;
-using SeleniumExtras.PageObjects;
-using System;
+using PageObjectModelFramework.BaseTest;
+using PageObjectModelFramework.PageObjects.CarBrandPages;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SeleniumExtras.PageObjects;
 
-namespace PageObjectModelFramework.pageobjects
+namespace PageObjectModelFramework.PageObjects
 {
     internal class NewCarPage : BasePage
     {
@@ -39,8 +38,8 @@ namespace PageObjectModelFramework.pageobjects
             WaitForElementToBeClickable(viewBrandButton);
             viewBrandButton.Click();
 
-            BaseTest.GetExtentTest()?.Info("Clicked on View Brand button");
-            BaseTest.log.Info("View Brand button clicked");
+            baseTest.GetExtentTest()?.Info("Clicked on View Brand button");
+            baseTest.log.Info("View Brand button clicked");
 
             return this; // Return this for method chaining
         }
@@ -60,8 +59,8 @@ namespace PageObjectModelFramework.pageobjects
             WaitForElementToBeClickable(brandLink);
             brandLink.Click();
 
-            BaseTest.GetExtentTest()?.Info($"Opened {brandName} brand page");
-            BaseTest.log.Info($"{brandName} brand page opened");
+            baseTest.GetExtentTest()?.Info($"Opened {brandName} brand page");
+            baseTest.log.Info($"{brandName} brand page opened");
 
             // Wait for page to load
             waitHelper.WaitForPageLoad();
@@ -77,7 +76,7 @@ namespace PageObjectModelFramework.pageobjects
 
             waitHelper.WaitForPageLoad();
 
-            BaseTest.GetExtentTest()?.Info("Opened BMW brand page");
+            baseTest.GetExtentTest()?.Info("Opened BMW brand page");
             return new BMWCarBrandPage(driver);
         }
 
@@ -88,7 +87,7 @@ namespace PageObjectModelFramework.pageobjects
 
             waitHelper.WaitForPageLoad();
 
-            BaseTest.GetExtentTest()?.Info("Opened Toyota brand page");
+            baseTest.GetExtentTest()?.Info("Opened Toyota brand page");
             return new ToyotaCarBrandPage(driver);
         }
 
@@ -99,7 +98,7 @@ namespace PageObjectModelFramework.pageobjects
 
             waitHelper.WaitForPageLoad();
 
-            BaseTest.GetExtentTest()?.Info("Opened Audi brand page");
+            baseTest.GetExtentTest()?.Info("Opened Audi brand page");
             return new AudiCarBrandPage(driver);
         }
     }

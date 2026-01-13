@@ -19,6 +19,7 @@
 	  <PackageReference Include="log4net" Version="3.2.0" />
 	  <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="9.0.10" />
 	  <PackageReference Include="Microsoft.NET.Test.Sdk" Version="18.0.0" />
+	  <PackageReference Include="MySql.Data" Version="9.5.0" />
 	  <PackageReference Include="NUnit" Version="4.4.0" />
 	  <PackageReference Include="NUnit.Analyzers" Version="4.10.0">
 		  <PrivateAssets>all</PrivateAssets>
@@ -30,6 +31,7 @@
 	  <PackageReference Include="SeleniumExtras.WaitHelpers" Version="1.0.2" />
 	  <PackageReference Include="DotNetSeleniumExtras.PageObjects" Version="3.11.0" />
 	  <PackageReference Include="DotNetSeleniumExtras.PageObjects.Core" Version="4.3.0" />
+	  <PackageReference Include="System.Data.SqlClient" Version="4.9.0" />
   </ItemGroup>
 
   <ItemGroup>

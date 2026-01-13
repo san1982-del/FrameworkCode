@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PageObjectModelFramework.pageobjects.CarBrandPages
+namespace PageObjectModelFramework.PageObjects.CarBrandPages
 {
     internal class ToyotaCarBrandPage : BasePage
     {

@@ -1,5 +1,5 @@
 ﻿using OpenQA.Selenium;
-using PageObjectModelFramework.basetest;
+using PageObjectModelFramework.BaseTest;
 using SeleniumExtras.PageObjects;
 using System;
 using System.Collections.Generic;
@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PageObjectModelFramework.pageobjects
+namespace PageObjectModelFramework.PageObjects
 {
     internal class CarBrandPage : BasePage
     {
@@ -36,8 +36,8 @@ namespace PageObjectModelFramework.pageobjects
                     //ScrollToElement(car); // Scroll into view
                     car.Click();
 
-                    BaseTest.GetExtentTest()?.Info($"Clicked on car: {carName}");
-                    BaseTest.log.Info($"Opened car name page for: {carName}");
+                    baseTest.GetExtentTest()?.Info($"Clicked on car: {carName}");
+                    baseTest.log.Info($"Opened car name page for: {carName}");
 
                     // Wait for page to load
                     waitHelper.WaitForPageLoad();
@@ -59,7 +59,7 @@ namespace PageObjectModelFramework.pageobjects
                 names.Add(car.Text.Trim());
             }
 
-            BaseTest.GetExtentTest()?.Info($"Retrieved {names.Count} car names");
+            baseTest.GetExtentTest()?.Info($"Retrieved {names.Count} car names");
             return names;
         }
     }

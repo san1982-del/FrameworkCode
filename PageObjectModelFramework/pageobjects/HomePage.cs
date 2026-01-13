@@ -1,7 +1,7 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
-using PageObjectModelFramework.basetest;
-using PageObjectModelFramework.utilities;
+using PageObjectModelFramework.BaseTest;
+using PageObjectModelFramework.Utils;
 using SeleniumExtras.PageObjects;
 using System;
 using System.Collections.Generic;
@@ -9,11 +9,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PageObjectModelFramework.pageobjects
+namespace PageObjectModelFramework.PageObjects
 {
     internal class HomePage:BasePage
     {
-        // Page Factory Elements - No more XML locators needed!
+        // Page Factory Elements
         [FindsBy(How = How.XPath, Using = "//div[normalize-space()='NEW CARS']")]
         private IWebElement newCarMenu;
 
@@ -57,8 +57,8 @@ namespace PageObjectModelFramework.pageobjects
             WaitForElementToBeClickable(findNewCarLink);
             findNewCarLink.Click();
 
-            BaseTest.GetExtentTest()?.Info("Navigated to New Cars page");
-            BaseTest.log.Info("New Cars page navigation completed");
+            baseTest.GetExtentTest()?.Info("Navigated to New Cars page");
+            baseTest.log.Info("New Cars page navigation completed");
 
             return new NewCarPage(driver);
         }
@@ -74,8 +74,8 @@ namespace PageObjectModelFramework.pageobjects
             WaitForElementToBeClickable(exploreUsedCarsLink);
             exploreUsedCarsLink.Click();
 
-            BaseTest.GetExtentTest()?.Info("Navigated to Used Cars page");
-            BaseTest.log.Info("Used Cars page is launched");
+            baseTest.GetExtentTest()?.Info("Navigated to Used Cars page");
+            baseTest.log.Info("Used Cars page is launched");
 
             return new UsedCarPage(driver);
         }
@@ -87,7 +87,7 @@ namespace PageObjectModelFramework.pageobjects
             searchBox.Clear();
             searchBox.SendKeys(searchTerm);
 
-            BaseTest.GetExtentTest()?.Info($"Entered search term: {searchTerm}");
+            baseTest.GetExtentTest()?.Info($"Entered search term: {searchTerm}");
 
             return this; // Return this for method chaining
         }
@@ -105,7 +105,7 @@ namespace PageObjectModelFramework.pageobjects
                     WaitForElementToBeClickable(item);
                     item.Click();
 
-                    BaseTest.GetExtentTest()?.Info($"Selected dropdown item: {itemText}");
+                    baseTest.GetExtentTest()?.Info($"Selected dropdown item: {itemText}");
                     break;
                 }
             }
@@ -123,7 +123,7 @@ namespace PageObjectModelFramework.pageobjects
             WaitForElementToBeVisible(mumbaiCityOption);
             mumbaiCityOption.Click();
 
-            BaseTest.GetExtentTest()?.Info($"Selected city: {cityName}");
+            baseTest.GetExtentTest()?.Info($"Selected city: {cityName}");
 
             return this; // Return this for method chaining
         }
@@ -134,12 +134,12 @@ namespace PageObjectModelFramework.pageobjects
             WaitForElementToBeClickable(usedSearchTab);
             usedSearchTab.Click();
 
-            BaseTest.GetExtentTest()?.Info("Switched to used car search");
+            baseTest.GetExtentTest()?.Info("Switched to used car search");
 
             return this; // Return this for method chaining
         }
 
-        // Data provider method (unchanged)
+        // Data provider method
         public static IEnumerable<TestCaseData> GetTestData()
         {
             var columns = new List<string> { "browser", "runmode", "carbrand", "cartitle", "carname" };

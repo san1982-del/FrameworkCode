@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PageObjectModelFramework.pageobjects.CarPages
+namespace PageObjectModelFramework.PageObjects.CarPages
 {
     internal class AudiCarPage : BasePage
     {

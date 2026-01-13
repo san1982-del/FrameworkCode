@@ -11,18 +11,18 @@ using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.Remote;
 using OpenQA.Selenium.Support.Extensions;
-using PageObjectModelFramework.utilities;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PageObjectModelFramework.basetest
+namespace PageObjectModelFramework.BaseTest
 {
     [SetUpFixture]
-    internal class BaseTest
+    internal class baseTest
     {
         public static ThreadLocal<IWebDriver> driver = new();
         private static ExtentReports extent;
@@ -112,14 +112,18 @@ namespace PageObjectModelFramework.basetest
                     chrome.AddArgument("--no-sandbox");
                     chrome.AddArgument("--disable-dev-shm-usage");
                     chrome.AddArgument("--disable-gpu");
-                    chrome.AddArgument("--window-size=1920,1080");
+                    chrome.AddArgument("--disable-blink-features=AutomationControlled");
+                    chrome.AddExcludedArgument("enable-automation");
+                    chrome.AddAdditionalOption("useAutomationExtension", false);
+                    chrome.AddArgument("--user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36");
+                    // chrome.AddArgument("--window-size=1920,1080");
                     return chrome;
 
                 case "firefox":
                     var ff = new FirefoxOptions();
                    // ff.AddArgument("--headless");
-                    ff.AddArgument("--width=1920");
-                    ff.AddArgument("--height=1080");
+                   // ff.AddArgument("--width=1920");
+                    //ff.AddArgument("--height=1080");
                     return ff;
 
                 default:
@@ -127,7 +131,7 @@ namespace PageObjectModelFramework.basetest
             }
         }
 
-        public void SetUp(string browserName)
+        public void SetUp(string browserName, string customUrl = null)
         {
             var commandTimeout = TimeSpan.FromMinutes(3);
             dynamic options = GetBrowserOptions(browserName);
@@ -141,14 +145,15 @@ namespace PageObjectModelFramework.basetest
                 commandTimeout
             );
 
-            GetDriver().Navigate().GoToUrl(configuration["AppSettings:testsiteurl"]);
+            string urlToNavigate = customUrl ?? configuration["AppSettings:testsiteurl"];
+            GetDriver().Navigate().GoToUrl(urlToNavigate);
             GetDriver().Manage().Cookies.DeleteAllCookies();
             GetDriver().Manage().Window.Maximize();
             GetDriver().Manage().Timeouts().ImplicitWait =
                 TimeSpan.FromSeconds(int.Parse(configuration["AppSettings:implicit.wait"]));
         }
 
-        static BaseTest()
+        static baseTest()
         {
             DateTime currentTime = DateTime.Now;
             string reportName = "Extent_" + currentTime.ToString("yyyy-MM-dd_HH-mm-ss") + ".html";

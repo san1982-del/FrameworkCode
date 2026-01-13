@@ -1,9 +1,9 @@
 ﻿using NUnit.Framework.Constraints;
 using OpenQA.Selenium;
-using PageObjectModelFramework.basetest;
-using PageObjectModelFramework.pageobjects.CarBrandPages;
-using PageObjectModelFramework.pageobjects.CarPages;
-using PageObjectModelFramework.utilities;
+using PageObjectModelFramework.BaseTest;
+using PageObjectModelFramework.PageObjects.CarBrandPages;
+using PageObjectModelFramework.PageObjects.CarPages;
+using PageObjectModelFramework.Utils;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -11,7 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PageObjectModelFramework.pageobjects
+namespace PageObjectModelFramework.PageObjects
 {
     internal class CarBase
 
@@ -51,12 +51,13 @@ namespace PageObjectModelFramework.pageobjects
             if (searchtype == "car")
             {
                 BasePage.keyword.Type("HomePage", "search", "XPATH", carname);
-                BaseTest.log.Info("Carname "+ carname+ " is entered for Search ");
+                
+                baseTest.log.Info("Carname "+ carname+ " is entered for Search ");
             }
             else if (searchtype == "brand")
             {
                 BasePage.keyword.Type("HomePage", "search", "XPATH", carbrand);
-                BaseTest.log.Info("Car Brand Name "+ carbrand +" is entered for Search ");
+                baseTest.log.Info("Car Brand Name "+ carbrand +" is entered for Search ");
             }
 
             System.Collections.ObjectModel.ReadOnlyCollection<IWebElement> menu = BasePage.keyword.GetWebElements("HomePage", "dropdownmenu", "XPATH");
@@ -72,21 +73,21 @@ namespace PageObjectModelFramework.pageobjects
                 if (item.GetAttribute("data-label") == carname)
                 {
                     item.Click();
-                    BaseTest.log.Info("Car name " + carname + " is selected for search");
+                    baseTest.log.Info("Car name " + carname + " is selected for search");
                     Assert.That(carname.Equals(BasePage.carBase.ValidatePageTitle()), "car titles not matching for : " + carname);
                     break;
                 }
                 else if (item.GetAttribute("data-label") == "All " + carbrand + " Cars")
                 {
                     item.Click();
-                    BaseTest.log.Info("Car Brand Name " + "All " + carbrand + " Cars" + " is selected for Search ");
+                    baseTest.log.Info("Car Brand Name " + "All " + carbrand + " Cars" + " is selected for Search ");
                     Assert.That(cartitle.Equals(BasePage.carBase.ValidatePageTitle()), "car titles not matching for : " + cartitle);
                     break;
                 }
                 else if (item.GetAttribute("data-label") == "Used " + carbrand + "/in Mumbai$/")
                 {
                     item.Click();
-                    BaseTest.log.Info("Car Brand Name " + "Used " + carbrand + " in Mumbai" + " is selected for Search ");
+                    baseTest.log.Info("Car Brand Name " + "Used " + carbrand + " in Mumbai" + " is selected for Search ");
                     Assert.That(cartitle.Equals(BasePage.carBase.ValidatePageTitle()), "car titles not matching for : " + cartitle);
                     break;
                 }
@@ -94,5 +95,14 @@ namespace PageObjectModelFramework.pageobjects
             }
         }
 
+        public List<string> Getdata_DB(string query)
+        {
+            // Step 1: Fetch expected data from database
+            DBManager.SetMySQLDBConnection();
+            List<string> expectedDBData = DBManager.GetQuery(query);
+            baseTest.GetExtentTest()?.Info("Fetched expected data from database");
+            baseTest.log.Info("Fetched expected data from database");
+            return expectedDBData;
+        }
     }
 }
